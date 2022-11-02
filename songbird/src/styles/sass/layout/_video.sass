@@ -1,0 +1,48 @@
+@imoprt '../abstracts/mixins'
+
+
+
+
+.background-video
+  position: relative
+  overflow: hidden
+  top: -75px
+  left: 0
+  width: 100%
+  height: min(700px, 55vw)
+  margin-bottom: -75px
+ 
+ 
+ 
+.background-video__video
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: -9999
+
+.background-video__text:before
+  background-color: rgba(0,0,0,0.6)
+  content: ""
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index: -1
+
+
+.background-video__text 
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 4
+  width: 100%
+  height: 100%
+
+.background-video__title 
+  @include title
+  color: white
+  text-transform: uppercase
+  text-align: center
+  width: 50%
+  margin: 0 auto
+  margin-top: 20%

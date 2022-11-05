@@ -6,11 +6,11 @@
 .background-video
   position: relative
   overflow: hidden
-  top: -75px
+  //top: -75px
   left: 0
   width: 100%
   height: min(700px, 55vw)
-  margin-bottom: -75px
+  margin-bottom: -45px
  
  
  
@@ -45,4 +45,29 @@
   text-align: center
   width: 50%
   margin: 0 auto
-  margin-top: 20%
+  margin-top: 25%
+  line-height: 1.5em
+
+.scroll-mouse
+  position: relative
+  top: -20px
+  z-index: 9
+  width: 40px
+  height: 45px
+  margin: 0 auto
+
+.mouse-icon
+  display: block
+  width: 100%
+  height: auto
+  animation: mouse 5s infinite
+  opacity: 0.5
+
+
+  @keyframes mouse
+    from 
+      opacity: 0.1
+    50%
+      opacity: 0.5
+    to 
+      opacity: 0.1

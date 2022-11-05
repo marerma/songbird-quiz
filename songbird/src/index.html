@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-  <title>Bird Song Game</title>
+  <title>Bird Song Quizz</title>
 </head>
 <body class="body">
   <header class="header">
@@ -13,22 +13,122 @@
       <div class="header__logo"></div>
       <ul class="header__nav-list">
         <li class="header__item"><a href="#" class="header__link">Home</a></li>
-        <li class="header__item"><a href="#" class="header__link">New game</a></li>
+        <li class="header__item"><a href="#new-quizz" class="header__link">New Quizz</a></li>
+        <li class="header__item"><a href="#facts" class="header__link">Facts</a></li>
+        <li class="header__item"><a href="#rules" class="header__link">Quizz rules</a></li>
+        <li class="header__item"><a href="#gallery" class="header__link">Gallery</a></li>
       </ul>
     </div>
     <div class="background-video">
     <div class="background-video__text">
-      <h1 class="background-video__title">Welcome to a fancy bird song game!</h1>
+      <h1 class="background-video__title">Welcome to a fancy Birdsong Quizz!</h1>
     </div>
     <video poster="./assets/video/poster-video.jpg" loop="loop" muted="" autoplay="" poster="video/plane.jpg" class="background-video__video">
-        <source src="./assets/video/birds-flying-compressed.mp4" type="video/mp4">
-        <source src="./assets/video/birds-flying-compressed.webm" type="video/webm">
+        <source src="./assets/video/birds-video.mp4" type="video/mp4">
+        <source src="./assets/video/birds-video.webm" type="video/webm">
         <source src="./assets/video/birds-flying.ogv" type="video/ogg">
     </video>
-</div>
-   
+  </div>
+  <div class="scroll-mouse">
+    <img src="./assets/icon-mouse.png" alt="icon scroll" class="mouse-icon">
+  </div>
 </header>
- 
+  <section class="facts" id="facts">
+     <div class="facts__container">
+      <div class="facts__img">
+        <img src="./assets/img/kisspng-bird.png" alt="bird flying" class="facts__bird flying-bird">
+      </div>
+      <ul class="facts__list facts__list_animation">
+        <h2 class="section__title section__title_facts section__title_animation">5 Fascinating Facts About Birdsong</h2>
+        <li class="facts__item">The songs of many bird species are highly complex and can contain <strong>dozens of notes per second</strong>. </li>
+        <li class="facts__item">Songbirds of the same species may have <strong>different dialects</strong>depending on their geographical area.</li>
+        <li class="facts__item">Birds <strong>aren’t born knowing their population’s songs</strong>. Just like humans, they have to listen to adults singing to pick up on the “language."</li>
+        <li class="facts__item">In most cases, when you hear a bird singing, you’re probably hearing a </strong>male</strong>. </li>
+        <li class="facts__item">Several songbird species <strong>don’t sing only their own tunes</strong>, but appropriate the tunes of other species as well. </li>
+      </ul>
+    </div>
+  </section>
+  <section class="rules" id="rules">
+    <div class="rules__container">
+      <ul class="rules__list">
+      <h2 class="section__title">Quizz rules</h2>
+      <li class="rules__item">There are 6 questions with 6 answer lis</li>
+      <li class="rules__item">You have to guess the bird name that is singing</strong>. </li>
+      <li class="rules__item">The maximum points for one right answer are 5 points.</li>
+      <li class="rules__item">You have 6 attempts. Each failed attempt reduces the score by 1 point.</li>
+    </ul>
+    <div class="button">
+      <a href="#" class="button__link" id="new-quizz">start quizz</a>
+    </div>
+    </div>
+  </section>
+  <section class="gallery" id="gallery">
+    <div class="gallery-container">
+      <h2 class="section__title">Get to know more about birds and their birdsongs</h2>
+      <ul class="bird-types-container">
+        <li id="different" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+              <p class="bird-type__title">Birds around us</p>
+              <button class="viewbutton">view more</button>
+            </div>
+          </div>
+        </li>
+        <li id="sparrows" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+            <p class="bird-type__title">Sparrows</p>
+            <button class="viewbutton">view more</button>
+            </div>
+          </div>
+        </li>
+        <li id="forest-birds" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+              <p class="bird-type__title">Forest birds</p>
+              <button class="viewbutton">view more</button>
+            </div>
+          </div>
+        </li>
+        <li id="songbirds" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+              <p class="bird-type__title">Songbirds</p>
+              <button class="viewbutton">view more</button>
+            </div>
+          </div>
+        </li>
+        <li id="predatory" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+              <p class="bird-type__title">Predatory birds</p>
+              <button class="viewbutton">view more</button>
+            </div>
+          </div>      
+        </li>
+        <li id="seabirds" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+              <p class="bird-type__title">Seabird</p>
+              <button class="viewbutton">view more</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="bird-type__gallery">
+        <button class="close">close X</button>
+        <div class="gallery__slider">
+          <div class="gallery__item">
+            <img class="item__image" src="" alt="bird picture">
+            <h3 class="item__name"></h3>
+            <h4 class="item__latin-name"></h4>
+            <audio src="" class="item__audio"></audio>
+            <p class="item__description"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 <footer class="footer">
   <div class="footer__navigation">
     <ul class="footer__navigation-list">

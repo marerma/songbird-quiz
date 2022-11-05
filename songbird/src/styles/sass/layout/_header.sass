@@ -15,7 +15,10 @@
   align-items: center
   padding: 20px 40px
   background-color: rgba(0,0,0, 0.8)
-  position: relative
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
   z-index: 9999
 
 .header__logo
@@ -35,3 +38,14 @@
   @include mainText
   color: white
   text-transform: uppercase
+
+.header__link:after
+  background-color: $colorWavy
+  display: block
+  content: ""
+  height: 2px
+  width: 0%
+  transition: width 0.8s ease-in-out
+
+.header__link:hover:after
+  width: 100%

@@ -1,0 +1,86 @@
+.section__title
+  @include title
+  font-size: 2rem
+  padding: 2rem 0
+
+.facts__container
+  @include mainText
+  font-size: 1.25rem
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-content: center
+  align-items: center
+  padding-bottom: 4rem
+
+.facts
+  padding: 1rem
+  max-width: 70%
+  margin: 0 auto
+
+
+.facts__img
+  width: 30%
+
+
+.facts__bird
+  display: inline-block
+  width: 100%
+  height: auto
+  transform: translate(-170%, -50%)
+  opacity: 0
+  transition: all ease 2s
+
+.flying-bird
+  transform: translate(0%, 0%)
+  opacity: 1
+  transition: all ease 2s
+
+
+.facts__list
+  max-width: 60%
+  padding: 20px
+
+.facts__list
+  opacity: 0
+  transform: translateX(-20%)
+  transition: all ease 2s
+
+.section__title_facts
+  opacity: 0
+  transform: translateX(-20%)
+  transition: all ease 2s
+
+.section__title_animation
+  opacity: 1
+  transform: translateX(0%)
+  transition: all ease 2s
+
+.facts__item, .rules__item
+  padding-bottom: 10px
+
+
+.facts__list_animation
+  opacity: 1
+  transform: translateX(0%)
+  transition: all ease 2s
+
+.rules
+  @include mainText
+  font-size: 1.25rem
+  background-color: $colorWavy
+  padding-bottom: 5rem
+
+.rules__container
+  max-width: max(900px, 80vw)
+  margin: 0 auto
+ 
+.rules__list
+  padding: 20px 20px 40px 20px
+
+
+.rules__item
+  background: url('../../assets/img/bird-icon.png') no-repeat
+  background-position: 0px 7px
+  background-size: 25px
+  padding: 10px 35px

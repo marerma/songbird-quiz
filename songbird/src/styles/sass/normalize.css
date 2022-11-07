@@ -254,6 +254,7 @@ legend {
 
 progress {
   vertical-align: baseline;
+  width: 0;
 }
 
 /**

@@ -12,15 +12,21 @@
   align-content: center
   align-items: center
   padding-bottom: 4rem
+  @media all and (max-width: 940px)
+    flex-direction: column
 
 .facts
   padding: 1rem
   max-width: 70%
   margin: 0 auto
-
+  margin-top: 4rem
+  @media all and (max-width: 1100px)
+    max-width: 80%
 
 .facts__img
   width: 30%
+  @media all and (max-width: 940px)
+    width: 40%
 
 
 .facts__bird
@@ -40,6 +46,10 @@
 .facts__list
   max-width: 60%
   padding: 20px
+  @media all and (max-width: 1100px)
+    max-width: 70%
+  @media all and (max-width: 940px)
+    max-width: 90%
 
 .facts__list
   opacity: 0

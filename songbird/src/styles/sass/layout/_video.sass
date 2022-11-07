@@ -9,7 +9,7 @@
   //top: -75px
   left: 0
   width: 100%
-  height: min(700px, 55vw)
+  height: min(100vh, 55vw)
   margin-bottom: -45px
  
  
@@ -47,6 +47,16 @@
   margin: 0 auto
   margin-top: 25%
   line-height: 1.5em
+  @media all and (max-width: 960px)
+    width: 70%
+    margin-top: 20%
+  @media all and (max-width: 684px)
+   font-size: 28px
+  @media all and (max-width: 479px)
+   width: 90%
+   font-size: 22px
+   margin-top: 30%
+
 
 .scroll-mouse
   position: relative
@@ -55,6 +65,8 @@
   width: 40px
   height: 45px
   margin: 0 auto
+  @media all and (max-width: 1400px)
+    visibility: hidden
 
 .mouse-icon
   display: block

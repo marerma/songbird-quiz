@@ -5,6 +5,7 @@ function controlSliderPlayer() {
     const tracks =  [...document.querySelectorAll('.item__audio')]
     playIcons.forEach((el, i)=> {
       el.addEventListener('click', ()=> {
+        tracks[i].ontimeupdate = progressUpdate
               if(tracks[i].paused) {
                 tracks[i].play();
                 el.classList.add('pause');
@@ -17,33 +18,30 @@ function controlSliderPlayer() {
   }
 }
 
-export {controlSliderPlayer}
-
-// progressUpdate () {
-//   const progressBar = [...document.querySelectorAll('.track')];
-//   const currentTrackTime = [...document.querySelectorAll('.current-time')];
-
-//     // const trackTimeArr = [...document.querySelectorAll('.track-time')];
-//     // trackTimeArr.forEach(el => {
-//     //   el.textContent = `${trackDuration.getMinutes()<10? '0'+ trackDuration.getMinutes() : trackDuration.getMinutes() }:${trackDuration.getSeconds()}`
-  
-//     // })
-    
-
-//   if (isNaN(this.currentTime / this.duration * 100)) {
-//     progressBar.value = 0.0001;
-//   } else {
-//     progressBar.value = this.currentTime / this.duration * 100;
-//   }
-  
-//   const trackDuration = new Date( this.duration*1000);
-//   let currentTime = new Date(this.currentTime*1000);
-//   trackTime.textContent = `${trackDuration.getMinutes()}:${trackDuration.getSeconds()}`;
-//   let currentSec = currentTime.getSeconds().toString().padStart(2, '0');
-//   currentTrackTime.textContent = `${currentTime.getMinutes()}:${currentSec}`;
-// }
 
 
-// updateAudio() {
-//   this.audio.ontimeupdate = this.progressUpdate;
-// }
+function progressUpdate () {
+  const progressBar = [...document.querySelectorAll('.track')];
+  const currentTrackTime = [...document.querySelectorAll('.current-time')];
+  const allAudio = [...document.querySelectorAll('.item__audio')];
+  const trackTimeArr = [...document.querySelectorAll('.track-time')];
+
+  trackTimeArr.forEach((el, ind) => {
+     const trackDuration = new Date(allAudio[ind].duration*1000);
+     let currentTimeOfTrack = new Date(allAudio[ind].currentTime*1000);
+     let currentSec = currentTimeOfTrack.getSeconds().toString().padStart(2, '0');
+     currentTrackTime[ind].textContent = `${currentTimeOfTrack.getMinutes()<10? '0' + currentTimeOfTrack.getMinutes(): currentTimeOfTrack.getMinutes() }:${currentSec}`;
+     el.textContent = `${trackDuration.getMinutes()<10? '0'+ trackDuration.getMinutes() : trackDuration.getMinutes() }:${trackDuration.getSeconds()}`
+     if (isNaN(allAudio[ind].currentTime / allAudio[ind].duration * 100)) {
+       progressBar[ind].value = 0.0001;
+     } else {
+       progressBar[ind].value = allAudio[ind].currentTime / allAudio[ind].duration * 100;
+    }
+  })
+}
+
+
+function updateAudio() {
+  this.audio.ontimeupdate = progressUpdate;
+}
+export {controlSliderPlayer, progressUpdate}

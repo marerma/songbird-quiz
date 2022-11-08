@@ -58,16 +58,15 @@ function makeGallery (array, index) {
     const newSlide = new SlideItem(name, spec, img, audio, description);
     itemGallery.append(newSlide.drawLayout());
     checker.append(dot);
-}   
-
+  }   
   slider.append(checker);
   [...document.querySelectorAll('.dots')][0].classList.add('active');
 
-  setTimeout(()=> {
-   slider.classList.add('gallery-visible');
-  }, 100)
+  // setTimeout(()=> {
+  //  slider.classList.add('gallery-visible');
+  // }, 100)
  
-  document.querySelector('.close').addEventListener('click', closeSlider);
+  // document.querySelector('.close').addEventListener('click', closeSlider);
 }
 
 function slide () {
@@ -135,7 +134,14 @@ function closeSlider() {
   
 } 
 
+function openGallery() {
+  const slider = document.querySelector('.bird-type__gallery');
+  setTimeout(()=> {
+    slider.classList.add('gallery-visible');
+   }, 100)
+
+  document.querySelector('.close').addEventListener('click', closeSlider);
+}
 
 
-
-export {makeGallery, slide}
+export {makeGallery, slide, openGallery}

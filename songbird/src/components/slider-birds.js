@@ -1,6 +1,4 @@
-import {birdsData} from './birds';
-
-const birdsGallery = [...document.querySelectorAll('.viewbutton')];
+import {Player} from './player';
 
 
 class SlideItem {
@@ -8,7 +6,7 @@ class SlideItem {
     this.name = name;
     this.species = species;
     this.img = img
-    this.audio = new Audio(audio);
+    this.audio = new Player(audio);
     this.description = description;
   };
 
@@ -26,38 +24,15 @@ class SlideItem {
     const itemLatin = document.createElement('h4');
     itemLatin.className = 'item__latin-name';
     itemLatin.textContent = this.species;
-    const itemAudio = this.audio;
-    itemAudio.className = 'item__audio';
-    // itemAudio.src = this.audioSrc
-    // itemAudio.type = 'audio/mpeg';
-    const itemPlayer = document.createElement('div');
-    itemPlayer.className = 'item__player';
-    itemPlayer.innerHTML = `
-      <button class="player-icon"></button>
-      <button class="volume-icon"></button>
-      <input type="range" class="volume-range" min="0" max="100">
-      <div class="item-progress-container">
-      <div class="track__time">
-      <span class="current-time">00:00</span><span class="track-time"></span></div> 
-      <progress class="track" value="0" max="100"></progress></div>`
-    
+    const itemPlayer = this.audio.drawPlayer();    
     const itemDescription = document.createElement('p');
     itemDescription.className = 'item__description';
     itemDescription.textContent = this.description;
-    item.append(itemImg, itemName, itemLatin, itemPlayer, itemAudio, itemDescription);
+    item.append(itemImg, itemName, itemLatin, itemPlayer, itemDescription);
     itemContainer.append(item);
     return itemContainer;
   };
 
-  play() {
-    this.audio.play();
-    this.audio.volume = 0.1
-    
-  }
-
-  pause() {
-    this.audio.pause();
-  }
 }
 
 function makeGallery (array, index) {
@@ -72,7 +47,7 @@ function makeGallery (array, index) {
   const checker = document.createElement('div');
   checker.className = "slider__checker";
 
-  for( let i = 0; i < arr.length; i++) {
+  for(let i = 0; i < arr.length; i++) {
     const name = arr[i].name;
     const spec = arr[i].species;
     const img = arr[i].image;
@@ -83,24 +58,8 @@ function makeGallery (array, index) {
     const newSlide = new SlideItem(name, spec, img, audio, description);
     itemGallery.append(newSlide.drawLayout());
     checker.append(dot);
-    const playIcon = [...document.querySelectorAll('.player-icon')];
+}   
 
-
-    playIcon[i].addEventListener('click', ()=> {
-
-      if(newSlide.audio.paused) {
-        newSlide.play();
-        playIcon[i].classList.add('pause');
-      } else {
-        newSlide.pause();
-        playIcon[i].classList.remove('pause');
-      }
-    
-    })  
-
-    
-
-  }   
   slider.append(checker);
   [...document.querySelectorAll('.dots')][0].classList.add('active');
 
@@ -109,7 +68,6 @@ function makeGallery (array, index) {
   }, 100)
  
   document.querySelector('.close').addEventListener('click', closeSlider);
-  
 }
 
 function slide () {
@@ -124,39 +82,29 @@ function slide () {
 
   dotsArr.forEach((item, index) => {
     item.addEventListener('click', ()=> {
-      
       removeDotsClass()
       addActiveClass(item);
       newPosition = (index * slideWidth);
-      if (index >= currentIndex) {
-        const soundPlayingPrev = [...document.querySelectorAll('.item__audio')][index-1];
-        const playIconPrev = [...document.querySelectorAll('.player-icon')][index-1];
-        if
-         (!soundPlayingPrev.paused || soundPlayingPrev.currentTime >= 0 || !soundPlayingPrev.started)  {
-           soundPlayingPrev.pause();
-           soundPlayingPrev.currentTime = 0;
-           playIconPrev.classList.remove('pause');
-         }
-        slider.classList.add('slider-animation-left');
-      } else {
-        const soundPlayingNext = [...document.querySelectorAll('.item__audio')][index+1];
-        const playIconNext = [...document.querySelectorAll('.player-icon')][index+1];
-        if
-         (!soundPlayingNext.paused || soundPlayingNext.currentTime >= 0 || !soundPlayingNext.started) 
-         {
-          soundPlayingNext.pause();
-          soundPlayingNext.currentTime = 0;
-          playIconNext.classList.remove('pause');
-         }
-        slider.classList.add('slider-animation-right')};
       
-      setTimeout(()=>{
-        slider.style.left = -newPosition + 'px'
-        slider.classList.remove('slider-animation-left');
-        slider.classList.remove('slider-animation-right');
-      }, 1000)
-      currentIndex = index;
-    })
+      let soundPlaying = [...document.querySelectorAll('.item__audio')][index-1];
+      let playIcon = [...document.querySelectorAll('.player-icon')][index-1];
+
+    if (index >= currentIndex) {
+      slider.classList.add('slider-animation-left');
+    } else {
+      soundPlaying = [...document.querySelectorAll('.item__audio')][index+1];
+      playIcon = [...document.querySelectorAll('.player-icon')][index+1];
+      slider.classList.add('slider-animation-right');
+    };
+    stopSong(soundPlaying, playIcon);
+
+    setTimeout(()=>{
+      slider.style.left = -newPosition + 'px'
+      slider.classList.remove('slider-animation-left');
+      slider.classList.remove('slider-animation-right');
+    }, 1000)
+    currentIndex = index;
+  })
 })
 
 function removeDotsClass() {
@@ -167,6 +115,14 @@ function removeDotsClass() {
 
 function addActiveClass(item) {
   item.classList.add('active');
+  }
+
+function stopSong(slide, icon) {
+  if (!slide.paused || slide.currentTime >= 0 || !slide.started)  {
+    slide.pause();
+    slide.currentTime = 0;
+    icon.classList.remove('pause');
+  }
   }
 }
 

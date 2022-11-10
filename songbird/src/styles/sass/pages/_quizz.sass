@@ -1,0 +1,239 @@
+.header__navigation_quizz
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  padding: 20px 40px
+  background-color: rgb(0,0,0)
+  position: relative
+  z-index: 9999
+
+.game-section
+  background-color: rgba(0,0,0, 0.9)
+  height: 100%
+  box-sizing: border-box
+  
+.game__questions
+  padding: 1vw 0
+
+.game__score
+  font-family: $mainFont
+  color: white
+  width: 50%
+  margin: 0 auto
+  text-align: center
+  padding: 1rem
+  text-transform: uppercase
+
+
+.questions__list
+  font-family: $mainFont
+  color: white
+  max-width: 70%
+  margin: 0 auto
+  // display: flex
+  // flex-direction: row
+  // justify-content: space-between
+  // align-items: center
+  // justify-items: center
+  display: grid
+  grid-template-columns: repeat(6, 1fr)
+  background-color: $colorWavy
+  border-radius: 5px
+  text-align: center
+  @media all and (max-width: 822px)
+    max-width: 90%
+    grid-template-columns: repeat(3, 1fr)
+
+
+.questions__item
+ padding: 0.6rem 1rem 
+ @media all and (max-width: 822px)
+  padding: 0.3rem 0.5rem 
+
+
+
+.questions__item.active
+ background-color: #555
+ border-radius: 5px
+
+.answer__name
+  font-family: $mainFont
+  border-bottom: 1px solid black
+  font-size: 1.5em
+  color: white
+  max-width: 50%
+  margin-bottom: 1.5rem
+
+
+
+.game__options
+  display: flex
+  flex-direction: row
+  justify-items: space-between
+  gap: 10px
+  @media all and (max-width: 650px)
+    flex-direction: column
+  
+
+.game__options-list
+  font-family: $mainFont
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  background-color: #222
+  border-radius: 10px
+  flex-basis: 40%
+  color: white
+  padding: 1rem
+  gap: 5px
+  @media all and (max-width: 1090px)
+    flex-basis: 30%
+
+
+
+.options__item
+  line-height: 1rem
+  padding: 1rem
+  border: 1px solid #555
+  border-radius: 5px
+  @media all and (max-width: 1091px)
+    padding: 0.8rem
+
+.options__item:hover
+  cursor: pointer
+
+.correct
+  background-color: $colorWavy
+
+.incorrect
+  background-color: #9C2648
+
+
+.game__round
+  max-width: 70%
+  margin: 0 auto
+  margin-bottom: 20px
+  @media all and (max-width: 822px)
+    max-width: 90%
+
+
+.game__quess
+  box-sizing: border-box
+  display: flex
+  flex-direction: row
+  justify-items: space-between
+  width: 100%
+  padding: 1rem
+  background-color: #222
+  border-radius: 10px
+  margin-bottom: 20px
+  @media all and (max-width: 650px)
+    flex-direction: column
+    justify-items: center
+
+    
+
+.guess__img
+  display: inline-block
+  border-radius: 10px
+  max-width: 30%
+  width: 250px
+  height: auto
+  @media all and (max-width: 650px)
+    max-width: 50%
+    margin: 0 auto
+
+
+
+.guess__name
+  width: 70%
+  padding: 1.5rem
+  @media all and (max-width: 650px)
+    margin: 0 auto
+    width: 90%
+
+.preview__container
+  display: flex
+  flex-direction: row
+  justify-content: center
+  justify-items: space-between
+  gap: 20px
+  @media all and (max-width: 1090px)
+    flex-direction: column
+    width: 100%
+    margin: 0 auto
+
+
+
+
+.game__options-preview
+  background-color: #222 
+  border-radius: 10px
+  width: 60%
+  gap: 20px
+  padding: 1rem
+  display: flex
+  flex-direction: column
+  @media all and (max-width: 1090px)
+    width: 80%
+  @media all and (max-width: 650px)
+    width: 95%
+
+
+.preview__main-block
+  display: flex
+  flex-direction: column
+  width: 70%
+  @media all and (max-width: 650px)
+    width: 90%
+    margin: 0 auto
+
+
+.preview__image
+  display: inline-block
+  border-radius: 10px
+  max-width: 200px
+  height: 150px
+  margin: 0 auto
+
+.preview__name, .preview__latin-name
+  font-family: $mainFont
+  border-bottom: 1px solid black
+  font-size: 1em
+  color: white
+  max-width: 60%
+
+.preview__latin-name
+  font-size: 0.8em
+
+.preview__description, .game__intro
+  font-family: $mainFont
+  font-size: 1em
+  color: white
+
+
+
+
+.game__intro
+  display: none
+
+.game__next
+  width: 70%
+  margin: 0 auto
+  margin-bottom: 20px
+  @media all and (max-width: 822px)
+    width: 90%
+
+.next-btn
+  font-family: $mainFont
+  width: 100%
+  background-color: #222 
+  border-radius: 5px
+  line-height: 2rem
+  border: 1px solid #555
+  color: white
+
+.next-active, .next-active:hover
+  background-color: $colorWavy
+  cursor: pointer

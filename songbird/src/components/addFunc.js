@@ -1,11 +1,11 @@
 function controlSliderPlayer() {
-  const playIcons = [...document.querySelectorAll('.player-icon')]
+  const playIcons = [...document.querySelectorAll('.player-icon')];
 
   if(playIcons) {
-    const tracks =  [...document.querySelectorAll('.item__audio')]
+    const tracks =  [...document.querySelectorAll('.item__audio')];
     playIcons.forEach((el, i)=> {
       el.addEventListener('click', ()=> {
-        tracks[i].ontimeupdate = progressUpdate
+        tracks[i].ontimeupdate = progressUpdate;
               if(tracks[i].paused) {
                 tracks[i].play();
                 el.classList.add('pause');
@@ -41,7 +41,4 @@ function progressUpdate () {
 }
 
 
-function updateAudio() {
-  this.audio.ontimeupdate = progressUpdate;
-}
 export {controlSliderPlayer, progressUpdate}

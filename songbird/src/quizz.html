@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+  <title>Quizz</title>
+</head>
+<body class="body">
+  <header class="header">
+    <div class=" header__navigation_quizz">
+      <a class="header__logo" href="./index.html"></a>
+      <ul class="header__nav-list">
+        <li class="header__item"><a href="./index.html" class="header__link">Home</a></li>
+        <li class="header__item"><a href="./index.html" class="header__link">New Quizz</a></li>
+        <li class="header__item"><a href="./index.html#facts" class="header__link">Facts</a></li>
+        <li class="header__item"><a href="./index.html#rules" class="header__link">Quizz rules</a></li>
+        <li class="header__item"><a href="./index.html#gallery" class="header__link">Gallery</a></li>
+      </ul>
+    </div>
+</header>
+<main class="game-section">
+  <div class="game__questions">
+  </div>
+  <div class="game__score">Score: 0</div>
+  <div class="game__round">
+    <div class="game__quess">
+      <img src="./assets/img/hiddenBird.jpg" alt="bird" class="guess__img">
+      <div class="guess__name">
+        <h3 class="answer__name">******</h3>
+      </div>
+    </div>
+    <div class="game__options">
+      <ul class="game__options-list">
+        <li class="options__item">Ворон</li>
+        <li class="options__item">Журавль</li>
+        <li class="options__item">Ласточка</li>
+        <li class="options__item">Козодой</li>
+        <li class="options__item">Кукушка</li>
+        <li class="options__item">Синица</li>
+      </ul>
+      <div class="game__options-preview">
+        <div class="preview__container">
+          <img class="preview__image" src="https://live.staticflickr.com//65535//49366595303_06cf65b07e.jpg">
+        <div class="preview__main-block">
+          <h3 class="preview__name">Воробей</h3>
+          <h4 class="preview__latin-name">Passer domesticus</h4>
+          <div class="item__player">
+            <button class="player-icon"></button>
+            <button class="volume-icon"></button>
+            <input type="range" class="volume-range" min="0" max="100">
+            <div class="item-progress-container">
+              <div class="track__time">
+                <span class="current-time"></span><span class="track-time"></span>
+              </div> 
+              <progress class="track" value="0" max="100">
+              </progress>
+            </div>
+            <audio preload="metadata" src="https://www.xeno-canto.org/sounds/uploaded/CXFHOPIVAS/XC503224-191020_0134.mp3" class="item__audio preview-audio"></audio>
+          </div>
+        </div>
+        </div>
+        <p class="preview__description">Воробьи являются самыми известными и узнаваемыми пернатыми. Их легко узнать по пестрому оперению и задорному чириканью. Воробьи относятся к синатропному виду — они селятся поблизости к человеческому жилищу.</p>
+        <p class="game__intro">Listen to the audio above and guess who is singing</p>
+      </div>
+    </div>
+  </div>
+  <div class="game__next">
+    <button class="next-btn">Next Level</button>
+  </div>
+</main>
+    <footer class="footer">
+      <div class="footer__navigation">
+        <ul class="footer__navigation-list">
+          <li class="footer__item">
+            <a href="https://github.com/marerma" class="footer__link">made by marerma © 2022</a></li>
+          <li class="footer__item">
+            <a href="https://rs.school/js/" 
+              class="footer__link">
+            <img src="./assets/logo/rs_school_js_white.svg" 
+                alt="logo rs-school"
+                class="footer__logo"></a></li>
+        </ul>
+    </footer>
+</body>
+</html>

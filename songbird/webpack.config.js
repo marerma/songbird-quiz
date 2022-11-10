@@ -28,7 +28,8 @@ const optimization = () => {
   return config
 }
 
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
+const pages = ['index', 'quizz'];
 
 const cssLoaders = extra => {
   const loaders = [
@@ -75,6 +76,7 @@ const jsLoaders = () => {
 const plugins = () => {
   const base = [
     new HTMLWebpackPlugin({
+      filename: 'index.html',
       favicon: './src/assets/favicon.ico',
       template: './src/index.html',
       minify: {
@@ -96,6 +98,10 @@ const plugins = () => {
      )
   ]
 
+
+
+
+
   if (isProd) {
     base.push(new BundleAnalyzerPlugin())
   }
@@ -103,15 +109,48 @@ const plugins = () => {
   return base
 }
 
+const pluginsNew = [].concat(
+    pages.map(
+      (page) =>
+        new HTMLWebpackPlugin({
+          inject: true,
+          template: `./src/${page}.html`,
+          filename: `${page}.html`,
+          chunks: [page],
+        })
+    ),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: filename('css')
+    }),
+    //new FaviconsWebpackPlugin('./src/favicon.ico'),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "./src/assets", to: "assets" ,
+          noErrorOnMissing: true
+        }]
+    })
+)
+
+
 module.exports = {
   mode: 'development',
-  entry: {
-    main: ['@babel/polyfill', './src/index.js'],
-  },
+  // entry: {
+  //   main: ['@babel/polyfill', './src/index.js'],
+  // },
+  // output: {
+  //   filename: filename('js'),
+  //   path: path.resolve(__dirname, 'dist'),
+  //   assetModuleFilename: 'assets/[hash][ext]',
+  // },
+  entry: pages.reduce((config, page) => {
+    config[page] = `./src/${page}.js`;
+    return config;
+  }, {}),
   output: {
-    filename: filename('js'),
-    path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/[hash][ext]',
+    filename: "[name].js",
+    path: path.resolve(__dirname, "dist"),
   },
   resolve: {
     extensions: ['.js', '.json'],
@@ -122,7 +161,7 @@ module.exports = {
     hot: isDev
   },
   devtool: isDev ? 'source-map' : false,
-  plugins: plugins(),
+  plugins: pluginsNew,//plugins(),
   module: {
     rules: [
       {

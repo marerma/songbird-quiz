@@ -61,12 +61,6 @@ function makeGallery (array, index) {
   }   
   slider.append(checker);
   [...document.querySelectorAll('.dots')][0].classList.add('active');
-
-  // setTimeout(()=> {
-  //  slider.classList.add('gallery-visible');
-  // }, 100)
- 
-  // document.querySelector('.close').addEventListener('click', closeSlider);
 }
 
 function slide () {
@@ -139,9 +133,7 @@ function openGallery() {
   setTimeout(()=> {
     slider.classList.add('gallery-visible');
    }, 100)
-
-  document.querySelector('.close').addEventListener('click', closeSlider);
 }
 
 
-export {makeGallery, slide, openGallery}
+export {makeGallery, slide, openGallery, closeSlider}

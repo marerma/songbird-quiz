@@ -146,7 +146,7 @@
 
 
 .close
-  background: url('../../assets/icons/close.png') no-repeat center
+  background: url('../../assets/icons/close-icon.svg') no-repeat center
   height: 30px
   width: 30px
   background-size: contain 
@@ -254,20 +254,21 @@
   gap: 20px
 
 .player-icon, .volume-icon 
+  background-color: rgba(1, 1, 1, 0)
   width: 40px
   height: 40px
   background-size: 40px 40px
-  background-image: url("../../assets/icons/play.png")
+  background-image: url("../../assets/icons/play.svg")
 
 .pause
-  background-image: url("../../assets/icons/pause.png")
+  background-image: url("../../assets/icons/pause-icon.svg")
 
 
 .volume-icon 
   width: 30px
   height: 30px
   background-size: 30px 30px
-  background-image: url('../../assets/icons/volume.png')
+  background-image: url('../../assets/icons/volume.svg')
   display: none
 
 .volume-range 
@@ -280,7 +281,7 @@
 
 
 .volume-icon-mute 
-  background-image: url('../../assets/icons/mute.png')
+  background-image: url('../../assets/icons/mute.svg')
 
 
 .volume-range::-webkit-slider-runnable-track 
@@ -311,7 +312,7 @@
     
 .track::-webkit-progress-bar 
   border-radius: 2px
-  height: 6px
+  height: 4px
   color: rgba(24, 23, 23, 0.5)
   outline: 2px solid rgb(78, 78, 78)
   width: 100%
@@ -326,6 +327,7 @@
   height: 6px
   
 .track__time 
+  font-family: $mainFont
   position: relative
 
 .current-time, .track-time 

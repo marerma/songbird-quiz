@@ -10,9 +10,9 @@
 <body class="body">
   <header class="header">
     <div class="header__navigation">
-      <div class="header__logo"></div>
-      <ul class="header__nav-list">
-        <li class="header__item"><a href="#" class="header__link">Home</a></li>
+      <a class="header__logo" href="./index.html"></a>
+      <ul class="header__nav-list" id="home">
+        <li class="header__item"><a href="#home" class="header__link">Home</a></li>
         <li class="header__item"><a href="#new-quizz" class="header__link">New Quizz</a></li>
         <li class="header__item"><a href="#facts" class="header__link">Facts</a></li>
         <li class="header__item"><a href="#rules" class="header__link">Quizz rules</a></li>
@@ -20,15 +20,15 @@
       </ul>
     </div>
     <div class="background-video">
-    <div class="background-video__text">
-      <h1 class="background-video__title">Welcome to a fancy Birdsong Quizz!</h1>
-    </div>
-    <video poster="./assets/video/poster-video.jpg" loop="loop" muted="" autoplay="" poster="video/plane.jpg" class="background-video__video">
+      <div class="background-video__text">
+        <h1 class="background-video__title">Welcome to a fancy Birdsong Quizz!</h1>
+      </div>
+      <video poster="./assets/video/poster-video.jpg" loop="loop" muted="" autoplay="" poster="video/plane.jpg" class="background-video__video">
         <source src="./assets/video/birds-video.mp4" type="video/mp4">
         <source src="./assets/video/birds-video.webm" type="video/webm">
         <source src="./assets/video/birds-flying.ogv" type="video/ogg">
-    </video>
-  </div>
+      </video>
+    </div>
   <div class="scroll-mouse">
     <img src="./assets/icons/icon-mouse.png" alt="icon scroll" class="mouse-icon">
   </div>
@@ -52,13 +52,13 @@
     <div class="rules__container">
       <ul class="rules__list">
       <h2 class="section__title">Quizz rules</h2>
-      <li class="rules__item">There are 6 questions with 6 answer lis</li>
-      <li class="rules__item">You have to guess the bird name that is singing</strong>. </li>
-      <li class="rules__item">The maximum points for one right answer are 5 points.</li>
-      <li class="rules__item">You have 6 attempts. Each failed attempt reduces the score by 1 point.</li>
+      <li class="rules__item">There are 6 questions with 6 options</li>
+      <li class="rules__item">Listen to a birdsong and guess the bird name</strong> </li>
+      <li class="rules__item">The maximum points for one right answer is 5 points</li>
+      <li class="rules__item">You have 6 attempts. Each failed attempt reduces the score by one point</li>
     </ul>
     <div class="button">
-      <a href="#" class="button__link" id="new-quizz">start quizz</a>
+      <a href="./quizz.html" class="button__link" id="new-quizz">start quizz</a>
     </div>
     </div>
   </section>

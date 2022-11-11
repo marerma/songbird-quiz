@@ -10,8 +10,9 @@
 
 .game-section
   background-color: rgba(0,0,0, 0.9)
-  height: 100%
   box-sizing: border-box
+  flex-grow: 3
+  padding: 20px 0
   
 .game__questions
   padding: 1vw 0
@@ -26,16 +27,12 @@
   text-transform: uppercase
 
 
+
 .questions__list
   font-family: $mainFont
   color: white
   max-width: 70%
   margin: 0 auto
-  // display: flex
-  // flex-direction: row
-  // justify-content: space-between
-  // align-items: center
-  // justify-items: center
   display: grid
   grid-template-columns: repeat(6, 1fr)
   background-color: $colorWavy
@@ -47,9 +44,9 @@
 
 
 .questions__item
- padding: 0.6rem 1rem 
- @media all and (max-width: 822px)
-  padding: 0.3rem 0.5rem 
+  padding: 0.6rem 1rem 
+  @media all and (max-width: 822px)
+    padding: 0.3rem 0.5rem 
 
 
 

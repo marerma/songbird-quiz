@@ -7,9 +7,9 @@
   <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
   <title>Quizz</title>
 </head>
-<body class="body quizz-body">
+<body class="body">
   <header class="header">
-    <div class=" header__navigation_quizz">
+    <div class="header__navigation header__navigation_quizz">
       <a class="header__logo" href="./index.html"></a>
       <ul class="header__nav-list">
         <li class="header__item"><a href="./index.html" class="header__link">Home</a></li>
@@ -26,7 +26,12 @@
   <div class="game__score">Score: <span class="score">0</span></div>
   <div class="game__round">
     <div class="game__quess">
-      <img src="./assets/img/hiddenBird.jpg" alt="bird" class="guess__img">
+      <div class="guess__img-container">
+        <img src="./assets/img/hiddenBird.jpg" 
+             alt="bird" 
+             class="guess__img">
+      </div>
+
       <div class="guess__name">
         <h3 class="answer__name">******</h3>
       </div>

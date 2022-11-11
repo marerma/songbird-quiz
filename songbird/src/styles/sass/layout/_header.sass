@@ -8,6 +8,7 @@
   position: relative
   z-index: 9999
 
+
 .header__navigation
   display: flex
   flex-direction: row
@@ -20,6 +21,8 @@
   left: 0
   right: 0
   z-index: 9999
+  @media all and (max-width: 764px)
+    padding: 10px 20px
 
 .header__logo
   display: block
@@ -34,6 +37,9 @@
   justify-content: space-between
   align-items: center
   gap: 40px
+  @media all and (max-width: 764px)
+    display: none
+
 
 .header__item
   @include mainText

@@ -5,14 +5,15 @@ import {quizzLayout, getRandomBird, arrangeQuestions} from './components/quizz-l
 import {birdsGroups} from './components/birds-group';
 import {birdsData} from './components/birds';
 import {birdsDataEn} from './components/birdsEn.js';
-import { Player } from './components/player';
-import { controlSliderPlayer, progressUpdate } from './components/addFunc';
+import { controlSliderPlayer } from './components/addFunc';
 import right  from './assets/audio/right.mp3';
 import wrong from './assets/audio/wrong.mp3';
 import { fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore } from './components/helpers'
+import {showBurger} from './components/burger'
 
 quizzLayout('En');
 arrangeQuestions();
+showBurger();
 
 
 const groupArr = [...birdsGroups];
@@ -57,9 +58,14 @@ function round(newGameState) {
 
 optionsItem.forEach((el, index) => {
   el.addEventListener('click', ()=> {
-    makePreview(birdsEn[newGameState.groupNum][index]);
-    checkAnswer(newGameState.randomBird, el, index);
-    newGameState.attemptCount++;
+    if(newGameState.levelIsActive) {
+      makePreview(birdsEn[newGameState.groupNum][index]);
+    } else {
+      makePreview(birdsEn[newGameState.groupNum][index]);
+      checkAnswer(newGameState.randomBird, el, index);
+      newGameState.attemptCount++;
+    }
+    
   })
 })
 
@@ -119,7 +125,6 @@ function newGame(){
   round(newGameState);
   newGameState.changePage();
   toggleFinishScore('block', 'none');
-
 }
 
 

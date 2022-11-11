@@ -4,10 +4,12 @@ import {showBird, showTitle} from './components/animation';
 import {birdsData} from './components/birds.js';
 import {makeGallery, openGallery, slide, closeSlider} from './components/slider-birds';
 import {controlSliderPlayer} from './components/addFunc';
+import {showBurger} from './components/burger'
 
 
 showBird();
 showTitle()
+showBurger();
 
 let galleryIsOpen = false;
 

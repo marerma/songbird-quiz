@@ -9,7 +9,7 @@ import { Player } from './components/player';
 import { controlSliderPlayer, progressUpdate } from './components/addFunc';
 import right  from './assets/audio/right.mp3';
 import wrong from './assets/audio/wrong.mp3';
-import { fillOptionsList, makePreview, changeFirstPreview } from './components/helpers'
+import { fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore } from './components/helpers'
 
 quizzLayout('En');
 arrangeQuestions();
@@ -24,46 +24,67 @@ const groupList = [...document.querySelectorAll('.questions__item')];
 const nextBtn = document.querySelector('.next-btn');
 const birdNameHtml = document.querySelector('.answer__name');
 const birdImgHtml = document.querySelector('.guess__img');
+const scoreHtml = [...document.querySelectorAll('.score')];
+
+
+
 controlSliderPlayer();
 
-let randomBird;
-let groupNum = 0;
-let levelIsActive = false;
+const newGameState = {
+  randomBird: 0,
+  groupNum: 0,
+  levelIsActive: false,
+  attemptCount: 0,
+  finalScore: 0,
+  changePage() {
+    changeFirstPreview();
+    scoreHtml.forEach(el => {el.textContent =`${newGameState.finalScore}`});
+  }
+}
 
-function round(groupNum) {
-  if(groupNum > 5) {
+
+function round(newGameState) {
+  if(newGameState.groupNum > 5) {
     return
   } 
   else {
-    randomBird = getRandomBird(birdsEn[groupNum]);
-    console.log(randomBird)
-    groupList[groupNum].classList.add('active');
-    secretAudio.src = birdsEn[groupNum][randomBird].audio;
-
-    fillOptionsList(optionsItem, birdsEn[groupNum]);
- 
+    newGameState.randomBird = getRandomBird(birdsEn[newGameState.groupNum]);
+    groupList[newGameState.groupNum].classList.add('active');
+    secretAudio.src = birdsEn[newGameState.groupNum][newGameState.randomBird].audio;
+    fillOptionsList(optionsItem, birdsEn[newGameState.groupNum]);
   }
 }
 
 optionsItem.forEach((el, index) => {
   el.addEventListener('click', ()=> {
-    makePreview(birdsEn[groupNum][index]);
-    checkAnswer(randomBird, el, index);
+    makePreview(birdsEn[newGameState.groupNum][index]);
+    checkAnswer(newGameState.randomBird, el, index);
+    newGameState.attemptCount++;
   })
 })
 
 
 function checkAnswer(correct, target, index) {
+  
   const answerAudio = new Audio();
   if (index == correct) {
     answerAudio.src = right;
     target.classList.add('correct');
     answerAudio.play();
-    levelIsActive = true;
-    birdNameHtml.textContent = birdsEn[groupNum][correct].name;
-    birdImgHtml.src = birdsEn[groupNum][correct].image;
-    groupNum == 5? console.log('finished') : nextBtn.addEventListener('click', nextLevel);
+    newGameState.levelIsActive = true;
+    birdNameHtml.textContent = birdsEn[newGameState.groupNum][correct].name;
+    birdImgHtml.src = birdsEn[newGameState.groupNum][correct].image;
+    newGameState.finalScore += getScore(newGameState.attemptCount);
+    scoreHtml.forEach(el => {el.textContent =`${newGameState.finalScore}`});
+    secretAudio.pause();
     nextBtn.classList.add('next-active');
+    
+    newGameState.groupNum == 5? 
+      setTimeout(()=> {
+        toggleFinishScore('none', 'block') 
+      }, 3000)
+      : nextBtn.addEventListener('click', nextLevel);
+ 
   } else {
     answerAudio.src = wrong;
     target.classList.add('incorrect');
@@ -73,17 +94,32 @@ function checkAnswer(correct, target, index) {
 
 
 function nextLevel() {
-  groupList[groupNum].classList.remove('active');
+  groupList[newGameState.groupNum].classList.remove('active');
   changeFirstPreview();
   nextBtn.classList.remove('next-active');
-  levelIsActive = false;
+  newGameState.levelIsActive = false;
   nextBtn.removeEventListener('click', nextLevel);
-  groupNum++
-  round(groupNum); 
-  
+  newGameState.groupNum++;
+  newGameState.attemptCount = 0;
+  round(newGameState); 
 }
 
-round(groupNum) 
+round(newGameState);
 
+const newBtn = document.querySelector('.game__new-game');
+newBtn.addEventListener('click', newGame);
+
+function newGame(){
+  groupList[newGameState.groupNum].classList.remove('active');
+  newGameState.groupNum = 0;
+  newGameState.randomBird = 0;
+  newGameState.attemptCount = 0;
+  newGameState.finalScore = 0;
+  newGameState.levelIsActive = false;
+  round(newGameState);
+  newGameState.changePage();
+  toggleFinishScore('block', 'none');
+
+}
 
 

@@ -215,14 +215,14 @@
 .game__intro
   display: none
 
-.game__next
+.game__next,.game__new-game
   width: 70%
   margin: 0 auto
   margin-bottom: 20px
   @media all and (max-width: 822px)
     width: 90%
 
-.next-btn
+.next-btn, .new-btn
   font-family: $mainFont
   width: 100%
   background-color: #222 
@@ -233,4 +233,39 @@
 
 .next-active, .next-active:hover
   background-color: $colorWavy
+  cursor: pointer
+
+.game__finish-text
+  box-sizing: border-box
+  font-family: $titleFont
+  
+  color: white
+  font-size: 30px
+  padding: 4rem
+  text-align: center
+
+
+.game__finish
+  max-width: 70%
+  margin: 0 auto
+  background-color: #222 
+  box-sizing: border-box
+  padding: 4rem
+  border-radius: 10px
+  display: none
+
+.visible
+  display: block
+  
+
+.game__new-game
+  width: 40%
+  margin: 0 auto
+  
+
+.new-btn
+  background-color: $colorWavy
+
+.new-btn:hover
+  background-color: #222 
   cursor: pointer

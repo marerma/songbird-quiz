@@ -23,7 +23,7 @@
 <main class="game-section">
   <div class="game__questions">
   </div>
-  <div class="game__score">Score: 0</div>
+  <div class="game__score">Score: <span class="score">0</span></div>
   <div class="game__round">
     <div class="game__quess">
       <img src="./assets/img/hiddenBird.jpg" alt="bird" class="guess__img">
@@ -69,6 +69,13 @@
   <div class="game__next">
     <button class="next-btn">Next Level</button>
   </div>
+  <div class="game__finish">
+    <p class='game__finish-text'>
+      You successfully finished the quizz! <br>Your final score is <span class="score"></span> points!</p>
+      <div class="game__new-game">
+        <button class="new-btn">New game</button>
+      </div>
+    </div>
 </main>
     <footer class="footer">
       <div class="footer__navigation">

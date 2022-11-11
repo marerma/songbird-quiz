@@ -37,4 +37,15 @@ function changeFirstPreview() {
 
 }
 
-export {makeList, fillOptionsList, makePreview, changeFirstPreview}
+function getScore(attempt, maxScore = 5, maxAttempt = 6) {
+  return Math.floor(maxScore - attempt*(attempt/maxAttempt));
+}
+
+
+function toggleFinishScore(propScore, propFinish) {
+  document.querySelector('.game__score').style.display = propScore;
+  document.querySelector('.game__round').style.display = propScore;
+  document.querySelector('.game__next').style.display = propScore;
+  document.querySelector('.game__finish').style.display = propFinish;
+}
+export {makeList, fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore}

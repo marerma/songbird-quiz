@@ -1,13 +1,15 @@
 .button
   width: 15rem
   border-radius: 25px
-  border: 2px solid #0B6B75
+  border: 2px solid #303030
   margin: 0 auto
+  background-color: $colorWavy
+  transition: all 0.8s ease-in-out
 
 .button:hover
   cursor: pointer
-  background-color: #0B6B75
-  text-shadow: 2px 2px 1px #292E32
+  background-color: #2D766B
+  transition: all 0.8s ease-in-out
 
 .button__link
   display: block
@@ -15,3 +17,17 @@
   text-align: center
   font-weight: 600
   font-size: 1.5rem
+  color: white
+
+.button__link:after
+  content: ""
+  background-color: #303030
+  display: block
+  height: 2px
+  width: 0%
+  transition: width 0.8s ease-in-out
+  margin: 0 auto
+
+.button__link:hover:after
+  margin: 0 auto
+  width: 70%

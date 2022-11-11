@@ -13,13 +13,15 @@ class Player {
     const itemPlayer = document.createElement('div');
     itemPlayer.className = 'item__player';
     itemPlayer.innerHTML = `
+    <div class="item-progress-container">
       <button class="player-icon"></button>
-      <button class="volume-icon"></button>
-      <input type="range" class="volume-range" min="0" max="100">
-      <div class="item-progress-container">
+      <progress class="track" value="0" max="100"></progress>
+      </div>
       <div class="track__time">
-      <span class="current-time"></span><span class="track-time"></span></div> 
-      <progress class="track" value="0" max="100"></progress></div>`
+      <span class="current-time"></span><span class="track-time"></span>
+      </div> 
+      <div><button class="volume-icon"></button>
+      <input type="range" class="volume-range" min="0" max="100"></div>`
     itemPlayer.append(itemAudio);
     return itemPlayer;
   };

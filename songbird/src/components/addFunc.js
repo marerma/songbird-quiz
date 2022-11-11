@@ -1,8 +1,13 @@
 function controlSliderPlayer() {
+  let isMuted = false;
+
   const playIcons = [...document.querySelectorAll('.player-icon')];
+  const volumeBtn = [...document.querySelectorAll('.volume-icon')];
+  const volumeRange = [...document.querySelectorAll('.volume-range')];
+  const tracks =  [...document.querySelectorAll('.item__audio')];
 
   if(playIcons) {
-    const tracks =  [...document.querySelectorAll('.item__audio')];
+    
     playIcons.forEach((el, i)=> {
       el.addEventListener('click', ()=> {
         tracks[i].ontimeupdate = progressUpdate;
@@ -15,8 +20,33 @@ function controlSliderPlayer() {
           }
       })
     })
+  };
+
+  if(volumeBtn) {
+    volumeRange.forEach((el, ind) => 
+      el.addEventListener('input', ()=> {
+        let v = el.value;
+        tracks[ind].volume = v / 100;
+      }
+    ));
+  };
+  
+  volumeBtn.forEach((el, ind) => 
+    el.addEventListener('click', ()=> {
+      if(isMuted) {
+        el.classList.remove('volume-icon-mute');
+        tracks[ind].muted = false;
+        volumeRange[ind].value = 50;
+        isMuted = false;
+      } else {
+        el.classList.add('volume-icon-mute');
+        isMuted = true;
+        volumeRange[ind].value = 0;
+        tracks[ind].muted = true;
+      };
   }
-}
+));
+};
 
 
 

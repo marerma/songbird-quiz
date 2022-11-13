@@ -1,5 +1,3 @@
-import { changeLang } from './lang';
-
 function showBurger() {
 
   if(window.innerWidth <= 764 && !document.querySelector('.burger__list')) {

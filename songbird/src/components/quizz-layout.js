@@ -1,21 +1,4 @@
 import { Player } from './player';
-import { changeFirstPreview} from './helpers'
-
-// function quizzLayout(lang) {
-//  changeFirstPreview()
-//  const gameSection = document.querySelectorAll('.questions__item');
-//  const questionsList = document.createElement('ul');
-//  questionsList.className = 'questions__list';
-//  gameSection.append(questionsList);
-//  const questions = birdsGroups.reduce((res, el) => {
-//    res.push(el[lang]);
-//    return res
-//  }, []);
-
-// makeList('questions__item', questions, questionsList);
-// }
-
-
 
 
 function arrangeQuestions(src) {

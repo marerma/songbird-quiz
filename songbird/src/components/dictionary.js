@@ -1,4 +1,4 @@
-const versions = {
+const dictionary = {
   "headerItems": {
     "ru": ["Главная", "Играть", "Факты", "Правила", "Галерея"],
     "en": ["Home", "New quiz", "Facts", "Quiz rules", "Gallery"],
@@ -102,4 +102,4 @@ const versions = {
   
 }
 
-export { versions }
+export { dictionary }

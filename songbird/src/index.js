@@ -3,7 +3,7 @@ import './styles/sass/main.sass'
 import {showBird, showTitle} from './components/animation';
 import {birdsData} from './components/birds.js';
 import {makeGallery, openGallery, slide, closeSlider} from './components/slider-birds';
-import {controlSliderPlayer} from './components/addFunc';
+import {controlSliderPlayer} from './components/playerControls';
 import {showBurger} from './components/burger';
 import { changeLang } from './components/lang';
 

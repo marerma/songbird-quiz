@@ -1,4 +1,4 @@
-import { versions } from './lang-versions';
+import { dictionary } from './dictionary';
 
 function changeLang() {
   let lang = '';
@@ -7,17 +7,12 @@ function changeLang() {
     if (e.target.dataset.lang) {
       lang = e.target.dataset.lang;
       redrawPage(lang);
-    }
-    
+    };
   });
 }
 
-
-
-
 function redrawPage(lng) {
   let headerItems
-
   
   if (window.innerWidth <= 764) {
     headerItems = {"headerItems": [...document.querySelector('.burger__list').querySelectorAll('.header__link')]};
@@ -48,10 +43,10 @@ nodesList.forEach(el => {
   let key = Object.keys(el)[0]
 
 if (!Array.isArray(el[key])) {
-   el[key].innerHTML = versions[key][lng];
+   el[key].innerHTML = dictionary[key][lng];
  } else {
    el[key].forEach((item, ind) => {
-    item.innerHTML = versions[key][lng][ind];
+    item.innerHTML = dictionary[key][lng][ind];
    });
  }
 });

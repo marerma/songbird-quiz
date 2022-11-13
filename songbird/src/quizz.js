@@ -4,7 +4,7 @@ import './styles/sass/main.sass'
 import { getRandomBird, arrangeQuestions} from './components/quizz-layout';
 import {birdsData} from './components/birds';
 import {birdsDataEn} from './components/birdsEn.js';
-import { controlSliderPlayer } from './components/addFunc';
+import { controlSliderPlayer } from './components/playerControls';
 import right from './assets/audio/right.mp3';
 import wrong from './assets/audio/wrong.mp3';
 import { fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore } from './components/helpers'

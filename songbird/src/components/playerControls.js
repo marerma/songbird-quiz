@@ -59,13 +59,11 @@ progressBar.forEach((el, ind) => {
 
 };
 
-function audioControl (progressBar, audio, playIcon) {
+function audioControl (progressBar, audio) {
   let width = progressBar.offsetWidth;
   let pointer = event.offsetX;
   progressBar.value = pointer / width * 100;
- 
   audio.currentTime = audio.duration * (pointer / width);
-
 }
 
 

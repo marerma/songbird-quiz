@@ -1,12 +1,3 @@
-// function makeList (nameClass, arr, list) {
-//   for (let i = 0; i < arr.length; i++) {
-//     const li = document.createElement('li');
-//     li.textContent = arr[i];
-//     list.append(li);
-//     li.className = nameClass;
-//    }
-// }
-
 function fillOptionsList(optionsArr, sourceArr) {
   optionsArr.forEach((el, ind) => {
     el.textContent = sourceArr[ind].name;

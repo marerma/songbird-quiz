@@ -7,6 +7,10 @@ function controlSliderPlayer() {
   const tracks =  [...document.querySelectorAll('.item__audio')];
   const progressBar = [...document.querySelectorAll('.track')];
 
+  tracks.forEach(el => {
+    el.onloadedmetadata = progressUpdate;
+  })
+
   if(playIcons) {
     playIcons.forEach((el, i)=> {
       el.addEventListener('click', ()=> {
@@ -17,9 +21,9 @@ function controlSliderPlayer() {
           } else {
             tracks[i].pause();
             el.classList.remove('pause');
-          }
-      })
-    })
+          };
+      });
+    });
   };
 
   if(volumeBtn) {

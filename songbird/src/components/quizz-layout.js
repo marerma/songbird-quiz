@@ -13,12 +13,6 @@ function quizzLayout(lang) {
    return res
  }, []);
 
-//  for (let i = 0; i < questions.length; i++) {
-//   const li = document.createElement('li');
-//   li.textContent = questions[i];
-//   questionsList.append(li);
-//   li.className = 'questions__item';
-//  }
 makeList('questions__item', questions, questionsList);
 }
 

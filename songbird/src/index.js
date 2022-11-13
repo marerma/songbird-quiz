@@ -11,7 +11,7 @@ showBird();
 showTitle()
 showBurger();
 
-window.addEventListener('resize', showBurger);
+
 
 let galleryIsOpen = false;
 

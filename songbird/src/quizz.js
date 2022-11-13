@@ -15,7 +15,7 @@ quizzLayout('En');
 arrangeQuestions();
 showBurger();
 
-window.addEventListener('resize', showBurger);
+
 
 const groupArr = [...birdsGroups];
 const birds = [... birdsData];

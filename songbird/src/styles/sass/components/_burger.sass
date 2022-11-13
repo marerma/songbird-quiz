@@ -1,6 +1,6 @@
 .burger__list
   box-sizing: border-box
-  transform: translateX(150%)
+  transform: translateX(100%)
   display: flex
   flex-direction: column
   position: absolute
@@ -13,21 +13,26 @@
   padding: 20px
   transition: all 1.5s ease
   border-radius: 10px
-  .header__link:after
+  @media all and (max-width: 360px) 
+    left: 0
+    max-width: 100%
+
+  &.header__link:after
     background-color: $colorWavy
     display: block
     content: ""
     height: 2px
     width: 0%
     transition: width 0.8s ease-in-out
-  .header__link:hover:after
+  &.header__link:hover:after
     width: 30%
+
 
 
 .burger-open
   transform: translateX(0%)
   transition: all 1.5s ease
-
+ 
 .burger-icon
   background: url('../../assets/icons/burger.png') no-repeat center
   width: 30px
@@ -59,7 +64,7 @@
   top: 0
   left: 0
   transition: opacity 1s ease
-  transform: translateX(150%)
+  transform: translateX(100%)
 
 .burger-bg_open
   opacity: 0.7

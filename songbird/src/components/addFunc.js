@@ -5,9 +5,9 @@ function controlSliderPlayer() {
   const volumeBtn = [...document.querySelectorAll('.volume-icon')];
   const volumeRange = [...document.querySelectorAll('.volume-range')];
   const tracks =  [...document.querySelectorAll('.item__audio')];
+  const progressBar = [...document.querySelectorAll('.track')];
 
   if(playIcons) {
-    
     playIcons.forEach((el, i)=> {
       el.addEventListener('click', ()=> {
         tracks[i].ontimeupdate = progressUpdate;
@@ -46,8 +46,23 @@ function controlSliderPlayer() {
       };
   }
 ));
+
+progressBar.forEach((el, ind) => {
+  el.addEventListener('click', ()=> {
+    audioControl(el, tracks[ind]);
+  })
+})
+
 };
 
+function audioControl (progressBar, audio, playIcon) {
+  let width = progressBar.offsetWidth;
+  let pointer = event.offsetX;
+  progressBar.value = pointer / width * 100;
+ 
+  audio.currentTime = audio.duration * (pointer / width);
+
+}
 
 
 function progressUpdate () {
@@ -61,7 +76,7 @@ function progressUpdate () {
      let currentTimeOfTrack = new Date(allAudio[ind].currentTime*1000);
      let currentSec = currentTimeOfTrack.getSeconds().toString().padStart(2, '0');
      currentTrackTime[ind].textContent = `${currentTimeOfTrack.getMinutes()<10? '0' + currentTimeOfTrack.getMinutes(): currentTimeOfTrack.getMinutes() }:${currentSec}`;
-     el.textContent = `${trackDuration.getMinutes()<10? '0'+ trackDuration.getMinutes() : trackDuration.getMinutes() }:${trackDuration.getSeconds()}`
+     el.textContent = `${trackDuration.getMinutes()<10? '0'+ trackDuration.getMinutes() : trackDuration.getMinutes() }:${trackDuration.getSeconds() < 10? '0' + trackDuration.getSeconds() : trackDuration.getSeconds()}`;
      if (isNaN(allAudio[ind].currentTime / allAudio[ind].duration * 100)) {
        progressBar[ind].value = 0.0001;
      } else {

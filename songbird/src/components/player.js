@@ -1,9 +1,7 @@
 class Player {
   constructor(src) {
     this.src = src;
-    this.track = new Audio(src);
-    this.trackDuration = this.track.duration;
-    
+    this.track = new Audio(src); 
   };
 
   drawPlayer () {
@@ -29,11 +27,11 @@ class Player {
   play() {
     this.track.play();
     this.track.volume = 0.3;
-  }
+  };
 
   pause() {
     this.track.pause();
-  }
+  };
 }
 
 

@@ -1,8 +1,8 @@
-
+import { changeLang } from './lang';
 
 function showBurger() {
 
-  if(window.innerWidth <= 764) {
+  if(window.innerWidth <= 764 && !document.querySelector('.burger__list')) {
     const insertBurger = document.querySelector('.header__navigation');
     const menuList = document.querySelector('.header__nav-list');
     const burger = menuList.cloneNode(true);
@@ -32,11 +32,10 @@ function showBurger() {
       if (e.target !== burger) {
         burger.classList.toggle('burger-open');
         bg.classList.toggle('burger-bg_open');
-      }
-      
+      };
     });
 
-    }
+  };
 
 }
 

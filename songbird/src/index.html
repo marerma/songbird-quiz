@@ -13,15 +13,21 @@
       <a class="header__logo" href="./index.html"></a>
       <ul class="header__nav-list" >
         <li class="header__item"><a href="#home" class="header__link">Home</a></li>
-        <li class="header__item"><a href="./quizz.html" class="header__link">New Quizz</a></li>
+        <li class="header__item"><a href="./quizz.html" class="header__link">New Quiz</a></li>
         <li class="header__item"><a href="#facts" class="header__link">Facts</a></li>
-        <li class="header__item"><a href="#rules" class="header__link">Quizz rules</a></li>
+        <li class="header__item"><a href="#rules" class="header__link">Quiz rules</a></li>
         <li class="header__item"><a href="#gallery" class="header__link">Gallery</a></li>
+        <li class="header__item" id="lang">
+          <ul class="lang__list">
+            <li class="lang__item"><p class="header__link-lang" data-lang="en">Eng</p></li>
+            <li class="lang__item"><p class="header__link-lang" data-lang="ru">Рус</p></li>
+          </ul>
+        </li>
       </ul>
     </div>
     <div class="background-video">
       <div class="background-video__text">
-        <h1 class="background-video__title">Welcome to a fancy Birdsong Quizz!</h1>
+        <h1 class="background-video__title">Welcome to a fancy Birdsong Quiz!</h1>
       </div>
       <video poster="./assets/video/poster-video.jpg" loop="loop" muted="" autoplay="" poster="video/plane.jpg" class="background-video__video">
         <source src="./assets/video/birds-video.mp4" type="video/mp4">
@@ -52,20 +58,20 @@
   <section class="rules" id="rules">
     <div class="rules__container">
       <ul class="rules__list">
-      <h2 class="section__title">Quizz rules</h2>
+      <h2 class="section__title section__title_rules">Quiz rules</h2>
       <li class="rules__item">There are 6 questions with 6 options</li>
       <li class="rules__item">Listen to a birdsong and guess the bird name</strong> </li>
       <li class="rules__item">The maximum points for one right answer is 5 points</li>
       <li class="rules__item">You have 6 attempts. Each failed attempt reduces the score by one point</li>
     </ul>
     <div class="button">
-      <a href="./quizz.html" class="button__link" id="new-quizz">start quizz</a>
+      <a href="./quizz.html" class="button__link" id="new-quizz">start quiz</a>
     </div>
     </div>
   </section>
   <section class="gallery" id="gallery">
     <div class="gallery-container">
-      <h2 class="section__title">Get to know more about birds and their birdsongs</h2>
+      <h2 class="section__title gallery_title">Get to know more about birds and their birdsongs</h2>
       <ul class="bird-types-container">
         <li id="different" class="bird-type">
           <div class="bird-type__bg">

@@ -4,14 +4,16 @@ import {showBird, showTitle} from './components/animation';
 import {birdsData} from './components/birds.js';
 import {makeGallery, openGallery, slide, closeSlider} from './components/slider-birds';
 import {controlSliderPlayer} from './components/addFunc';
-import {showBurger} from './components/burger'
+import {showBurger} from './components/burger';
+import { changeLang } from './components/lang';
 
 
 showBird();
 showTitle()
 showBurger();
+changeLang();
 
-
+window.addEventListener('resize', showBurger);
 
 let galleryIsOpen = false;
 

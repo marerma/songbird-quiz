@@ -1,11 +1,11 @@
-function makeList (nameClass, arr, list) {
-  for (let i = 0; i < arr.length; i++) {
-    const li = document.createElement('li');
-    li.textContent = arr[i];
-    list.append(li);
-    li.className = nameClass;
-   }
-}
+// function makeList (nameClass, arr, list) {
+//   for (let i = 0; i < arr.length; i++) {
+//     const li = document.createElement('li');
+//     li.textContent = arr[i];
+//     list.append(li);
+//     li.className = nameClass;
+//    }
+// }
 
 function fillOptionsList(optionsArr, sourceArr) {
   optionsArr.forEach((el, ind) => {
@@ -48,4 +48,4 @@ function toggleFinishScore(propScore, propFinish) {
   document.querySelector('.game__next').style.display = propScore;
   document.querySelector('.game__finish').style.display = propFinish;
 }
-export {makeList, fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore}
+export {fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore}

@@ -8,7 +8,7 @@
   <title>Quizz</title>
 </head>
 <body class="body">
-  <header class="header">
+  <header class="header header_guizz">
     <div class="header__navigation header__navigation_quizz">
       <a class="header__logo" href="./index.html"></a>
       <ul class="header__nav-list">
@@ -17,13 +17,27 @@
         <li class="header__item"><a href="./index.html#facts" class="header__link">Facts</a></li>
         <li class="header__item"><a href="./index.html#rules" class="header__link">Quizz rules</a></li>
         <li class="header__item"><a href="./index.html#gallery" class="header__link">Gallery</a></li>
+        <li class="header__item" id="lang">
+          <ul class="lang__list">
+            <li class="lang__item"><p class="header__link-lang" data-lang="en">Eng</p></li>
+            <li class="lang__item"><p class="header__link-lang" data-lang="ru">Рус</p></li>
+          </ul>
+        </li>
       </ul>
     </div>
 </header>
 <main class="game-section">
   <div class="game__questions">
+    <ul class="questions__list">
+      <li class="questions__item active">Birds around us</li>
+      <li class="questions__item">Sparrows</li>
+      <li class="questions__item">Forest birds</li>
+      <li class="questions__item">Songbirds</li>
+      <li class="questions__item">Predatory birds</li>
+      <li class="questions__item">Seabirds</li>
+    </ul>
   </div>
-  <div class="game__score">Score: <span class="score">0</span></div>
+  <div class="game__score"><span class="score-text">Score: </span><span class="score">0</span></div>
   <div class="game__round">
     <div class="game__quess">
       <div class="guess__img-container">
@@ -49,8 +63,8 @@
         <div class="preview__container">
           <img class="preview__image" src="https://live.staticflickr.com//65535//49366595303_06cf65b07e.jpg">
         <div class="preview__main-block">
-          <h3 class="preview__name">Воробей</h3>
-          <h4 class="preview__latin-name">Passer domesticus</h4>
+          <h3 class="preview__name"></h3>
+          <h4 class="preview__latin-name"></h4>
           <div class="item__player">
             <div class="item-progress-container">
               <button class="player-icon"></button>
@@ -59,14 +73,16 @@
             </div>
               <div class="track__time">
                 <span class="current-time"></span><span class="track-time"></span>
-              </div> 
-              <button class="volume-icon"></button>
-              <input type="range" class="volume-range" min="0" max="100">
+              </div>
+              <div>
+                <button class="volume-icon"></button>
+                <input type="range" class="volume-range" min="0" max="100">
+              </div>
             <audio preload="metadata" src="https://www.xeno-canto.org/sounds/uploaded/CXFHOPIVAS/XC503224-191020_0134.mp3" class="item__audio preview-audio"></audio>
           </div>
         </div>
         </div>
-        <p class="preview__description">Воробьи являются самыми известными и узнаваемыми пернатыми. Их легко узнать по пестрому оперению и задорному чириканью. Воробьи относятся к синатропному виду — они селятся поблизости к человеческому жилищу.</p>
+        <p class="preview__description"></p>
         <p class="game__intro">Listen to the audio above and guess who is singing</p>
       </div>
     </div>
@@ -76,7 +92,7 @@
   </div>
   <div class="game__finish">
     <p class='game__finish-text'>
-      You successfully finished the quizz! <br>Your final score is <span class="score"></span> points!</p>
+      <span class="finish-declaration">You successfully finished the quizz! <br>Your final score is</span> <span class="score"></span></p>
       <div class="game__new-game">
         <button class="new-btn">New game</button>
       </div>

@@ -14,12 +14,14 @@ class Player {
     <div class="item-progress-container">
       <button class="player-icon"></button>
       <progress class="track" value="0" max="100"></progress>
-      </div>
+    </div>
       <div class="track__time">
-      <span class="current-time"></span><span class="track-time"></span>
+        <span class="current-time"></span><span class="track-time"></span>
       </div> 
-      <div><button class="volume-icon"></button>
-      <input type="range" class="volume-range" min="0" max="100"></div>`
+      <div>
+        <button class="volume-icon"></button>
+        <input type="range" class="volume-range" min="0" max="100">
+      </div>`
     itemPlayer.append(itemAudio);
     return itemPlayer;
   };

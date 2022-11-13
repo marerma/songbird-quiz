@@ -1,23 +1,27 @@
 import './styles/sass/normalize.css'
 import './styles/sass/main.sass'
 
-import {quizzLayout, getRandomBird, arrangeQuestions} from './components/quizz-layout';
-import {birdsGroups} from './components/birds-group';
+import { getRandomBird, arrangeQuestions} from './components/quizz-layout';
 import {birdsData} from './components/birds';
 import {birdsDataEn} from './components/birdsEn.js';
 import { controlSliderPlayer } from './components/addFunc';
-import right  from './assets/audio/right.mp3';
+import right from './assets/audio/right.mp3';
 import wrong from './assets/audio/wrong.mp3';
 import { fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore } from './components/helpers'
-import {showBurger} from './components/burger'
+import {showBurger} from './components/burger';
+import { changeLang } from './components/lang';
 
-quizzLayout('En');
+
 arrangeQuestions();
+changeFirstPreview();
 showBurger();
+changeLang();
 
 
 
-const groupArr = [...birdsGroups];
+window.addEventListener('resize', showBurger);
+
+
 const birds = [... birdsData];
 const birdsEn = [... birdsDataEn];
 const secretAudio = document.querySelector('.item__audio');

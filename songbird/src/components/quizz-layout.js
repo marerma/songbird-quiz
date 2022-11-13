@@ -1,20 +1,19 @@
-import {birdsGroups} from './birds-group'
 import { Player } from './player';
-import { makeList, changeFirstPreview} from './helpers'
+import { changeFirstPreview} from './helpers'
 
-function quizzLayout(lang) {
- changeFirstPreview()
- const gameSection = document.querySelector('.game__questions');
- const questionsList = document.createElement('ul');
- questionsList.className = 'questions__list';
- gameSection.append(questionsList);
- const questions = birdsGroups.reduce((res, el) => {
-   res.push(el[lang]);
-   return res
- }, []);
+// function quizzLayout(lang) {
+//  changeFirstPreview()
+//  const gameSection = document.querySelectorAll('.questions__item');
+//  const questionsList = document.createElement('ul');
+//  questionsList.className = 'questions__list';
+//  gameSection.append(questionsList);
+//  const questions = birdsGroups.reduce((res, el) => {
+//    res.push(el[lang]);
+//    return res
+//  }, []);
 
-makeList('questions__item', questions, questionsList);
-}
+// makeList('questions__item', questions, questionsList);
+// }
 
 
 
@@ -31,4 +30,4 @@ function getRandomBird(arr) {
   const max = arr.length;
   return Math.floor(Math.random() * (max - min) + min);
 }
-export {quizzLayout, getRandomBird, arrangeQuestions, makeList}
+export {getRandomBird, arrangeQuestions}

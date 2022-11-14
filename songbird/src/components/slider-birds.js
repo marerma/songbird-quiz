@@ -41,6 +41,7 @@ class SlideItem {
 
 function makeGallery (index) {
   const lang = document.querySelector("input[type='radio']:checked").value;
+
   let arrayBirds
   if (lang == 'en') {
     arrayBirds = [...birdsDataEn];

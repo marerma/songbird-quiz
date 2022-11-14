@@ -11,12 +11,29 @@ function changeLang() {
     if (e.target.dataset.lang) {
       lang = e.target.dataset.lang;
       (langInput.find(el => el.value == lang)).checked = true;
+      localStorage.setItem('language', lang)
       redrawPage(lang);
     if(document.querySelector('.gallery-visible')) {
       closeSlider();
     }
     };
   });
+}
+
+function setLocalStorage() {
+const langInput = [...document.querySelectorAll('.lang__item')]; 
+  if(localStorage.getItem('language')) {
+    let lang = localStorage.getItem('language');
+    let input = langInput.filter(el => el.value === lang);
+    input[0].checked = true;  
+    redrawPage(lang);
+  } else
+  {
+    let input = langInput.filter(el => el.value === 'en');
+    input[0].checked = true;
+
+  }
+
 }
 
 function redrawPage(lng) {
@@ -70,4 +87,4 @@ if (!Array.isArray(el[key])) {
 
 }
 
-export { changeLang, redrawPage }
+export { changeLang, redrawPage, setLocalStorage }

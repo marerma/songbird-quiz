@@ -7,7 +7,7 @@ import right from './assets/audio/right.mp3';
 import wrong from './assets/audio/wrong.mp3';
 import { fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore, checkLangArray} from './components/helpers'
 import {showBurger} from './components/burger';
-import { redrawPage } from './components/lang';
+import { redrawPage, setLocalStorage } from './components/lang';
 
 
 
@@ -16,8 +16,11 @@ changeFirstPreview();
 showBurger();
 changeLangQuizz();
 
-
-
+window.addEventListener('load', ()=> {
+  setLocalStorage();
+  newGameState.redrawOptions();
+} 
+);
 window.addEventListener('resize', showBurger);
 
 
@@ -160,6 +163,7 @@ function changeLangQuizz() {
     if (e.target.dataset.lang) {
       lang = e.target.dataset.lang;
       (langInput.find(el => el.value == lang)).checked = true;
+      localStorage.setItem('language', lang)
       redrawPage(lang);
       newGameState.redrawOptions();
     };

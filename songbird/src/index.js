@@ -4,7 +4,7 @@ import {showBird, showTitle} from './components/animation';
 import {makeGallery, openGallery, slide, closeSlider} from './components/slider-birds';
 import {controlSliderPlayer} from './components/playerControls';
 import {showBurger} from './components/burger';
-import { changeLang } from './components/lang';
+import { changeLang, setLocalStorage } from './components/lang';
 
 
 showBird();
@@ -16,6 +16,7 @@ changeLang();
 
 
 window.addEventListener('resize', showBurger);
+window.addEventListener('load', setLocalStorage);
 
 let galleryIsOpen = false;
 

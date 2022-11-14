@@ -1,4 +1,5 @@
 import { dictionary } from './dictionary';
+import { closeSlider } from './slider-birds';
 
 
 function changeLang() {
@@ -11,7 +12,9 @@ function changeLang() {
       lang = e.target.dataset.lang;
       (langInput.find(el => el.value == lang)).checked = true;
       redrawPage(lang);
-
+    if(document.querySelector('.gallery-visible')) {
+      closeSlider();
+    }
     };
   });
 }

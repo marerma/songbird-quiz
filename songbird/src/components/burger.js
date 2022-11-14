@@ -33,7 +33,11 @@ function showBurger() {
       };
     });
 
-  };
+  } else if (window.innerWidth > 764 && document.querySelector('.burger__list')){
+    document.querySelector('.burger__list').classList.remove('burger-open');
+    document.querySelector('.burger-bg').classList.remove('burger-bg_open')
+  }
+
 
 }
 

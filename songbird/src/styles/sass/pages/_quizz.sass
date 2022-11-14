@@ -29,7 +29,10 @@
   padding: 1rem
   text-transform: uppercase
 
-
+.score
+  font-weight: 700
+  font-size: 1.3rem
+  padding-left: 0.5rem
 
 .questions__list
   font-family: $mainFont
@@ -41,8 +44,9 @@
   background-color: $colorWavy
   border-radius: 5px
   text-align: center
-  @media all and (max-width: 822px)
+  @media all and (max-width: 1091px)
     max-width: 90%
+  @media all and (max-width: 822px)
     grid-template-columns: repeat(3, 1fr)
 
 
@@ -80,14 +84,17 @@
   font-family: $mainFont
   display: flex
   flex-direction: column
-  justify-content: space-between
+  justify-content: center
+ 
   background-color: #222
   border-radius: 10px
   flex-basis: 40%
   color: white
   padding: 1rem
   gap: 5px
-  max-height: 350px
+  @media all and (max-width: 1091px)
+    padding: 20px 1rem
+
 
 
 
@@ -134,7 +141,7 @@
 .guess__img-container
   width: 30%
   height: 200px
-
+  min-width: 250px
   @media all and (max-width: 650px)
     width: 50%
     margin: 0 auto

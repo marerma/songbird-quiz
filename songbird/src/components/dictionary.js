@@ -66,12 +66,12 @@ const dictionary = {
   },   
 
   "finish": {
-    "ru": "Вы успешно закончили игру! <br> Ваш финальный счет: <span class='score'></span> баллов",
-    "en": "You successfully finished the quiz! <br>Your final score is <span class='score'></span> points!",
+    "ru": "Вы успешно закончили игру! <br> Ваш финальный счет: ",
+    "en": "You successfully finished the quiz! <br>Your final score is",
   },
 
   "btnNew": {
-    "ru": "Сыгать еще раз",
+    "ru": "Игать еще раз",
     "en": "New game",
   },
 

@@ -12,6 +12,8 @@
   background-color: rgba(0,0,0, 1)
   position: relative
   z-index: 9999
+  @media all and (max-width: 764px)
+    padding: 10px
 
 
 .footer__navigation-list
@@ -24,6 +26,8 @@
   justify-items: center
 
 
+
+
 .footer__item
   @include mainText
   color: white
@@ -34,5 +38,7 @@
   display: inline-block
   width: 100px
   height: auto
+  @media all and (max-width: 764px)
+    width: max(12vw, 60px)
 .footer__link:hover
   color: $colorWavy

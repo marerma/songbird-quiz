@@ -144,9 +144,9 @@
   transform: translateY(-105%)
   transition: all ease 1s
   @media all and (max-width: 764px)
-    transform: translateY(-155%)
+    transform: translateY(-135%)
   @media all and (max-width: 494px)
-    transform: translateY(-205%)
+    transform: translateY(0%)
 
 
 
@@ -196,6 +196,13 @@
     grid-template-areas: 'bird-img name''bird-img latin-name' 'bird-img player' 'description description' 'description description' 'description description'
   @media all and (max-width: 707px)
     grid-template-areas: 'bird-img name''bird-img latin-name' 'player player' 'description description' 'description description' 'description description'
+  @media all and (max-width: 490px)
+    max-width: 90%
+    grid-template-columns: 100%
+    grid-template-areas: 'bird-img''name' 'latin-name' 'player' 'description' 'description'
+  
+
+
 
 .slider-animation-left 
   animation: moveLeft 1s ease 1
@@ -231,6 +238,9 @@
   grid-area: latin-name
   margin: 0
   font-size: 1.1em
+  @media all and (max-width: 490px)
+    max-width: 80%
+
 
 
 .item__description
@@ -354,7 +364,7 @@
   position: relative
   width: 90%
   margin: 0 auto
-  padding-left: 10%
+  padding-left: 5%
   margin-top: -10px
 
 
@@ -383,6 +393,9 @@
   height: 15px
   background: $colorWavy
   border-radius: 50%
+  @media all and (max-width: 490px)
+    width: 10px
+    height: 10px
 
 
 

@@ -24,13 +24,24 @@ const birdsGallery = [...document.querySelectorAll('.viewbutton')];
 birdsGallery.forEach((item, index) => item.addEventListener('click', () => {
   makeGallery(index);
   openGallery();
+
+  if (window.innerWidth < 490 ) {
+    setTimeout(()=> {
+      const openItem = document.querySelector('.gallery-visible');
+      openItem.style.top =  item.getBoundingClientRect().y  + 'px';
+
+    }, 100)
+    
+  }
+  
   galleryIsOpen = true
   if (galleryIsOpen) {
     controlSliderPlayer();
     slide();
+   
     document.querySelector('.close').addEventListener('click', ()=> {
       closeSlider();
-      galleryIsOpen = false
+      galleryIsOpen = false;
     } );
   }
 }))

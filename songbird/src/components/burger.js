@@ -38,7 +38,6 @@ function showBurger() {
     document.querySelector('.burger-bg').classList.remove('burger-bg_open')
   }
 
-
 }
 
 export { showBurger }

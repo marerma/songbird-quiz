@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-  <title>Bird Song Quizz</title>
+  <title>Bird Song Quiz</title>
 </head>
 <body class="body">
   <header class="header">
@@ -13,14 +13,18 @@
       <a class="header__logo" href="./index.html"></a>
       <ul class="header__nav-list" >
         <li class="header__item"><a href="#home" class="header__link">Home</a></li>
-        <li class="header__item"><a href="./quizz.html" class="header__link">New Quiz</a></li>
+        <li class="header__item"><a href="quiz.html" class="header__link">New Quiz</a></li>
         <li class="header__item"><a href="#facts" class="header__link">Facts</a></li>
         <li class="header__item"><a href="#rules" class="header__link">Quiz rules</a></li>
         <li class="header__item"><a href="#gallery" class="header__link">Gallery</a></li>
         <li class="header__item" id="lang">
           <ul class="lang__list">
-            <li class="lang__item"><p class="header__link-lang" data-lang="en">Eng</p></li>
-            <li class="lang__item"><p class="header__link-lang" data-lang="ru">Рус</p></li>
+            <li>
+              <input type="radio" name="language" class="lang__item" value="en" checked><label class="header__link-lang" data-lang="en">Eng</label></input>
+            </li>
+            <li>
+              <input type="radio" name="language" class="lang__item" value="ru"><label class="header__link-lang" data-lang="ru">Рус</label></input>
+            </li>
           </ul>
         </li>
       </ul>
@@ -65,13 +69,13 @@
       <li class="rules__item">You have 6 attempts. Each failed attempt reduces the score by one point</li>
     </ul>
     <div class="button">
-      <a href="./quizz.html" class="button__link" id="new-quizz">start quiz</a>
+      <a href="./quiz.html" class="button__link" id="new-quizz">start quiz</a>
     </div>
     </div>
   </section>
   <section class="gallery" id="gallery">
     <div class="gallery-container">
-      <h2 class="section__title gallery_title">Get to know more about birds and their birdsongs</h2>
+      <h2 class="section__title gallery_title">Get to know more about birds and their songs</h2>
       <ul class="bird-types-container">
         <li id="different" class="bird-type">
           <div class="bird-type__bg">

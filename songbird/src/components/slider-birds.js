@@ -1,4 +1,6 @@
 import {Player} from './player';
+import {birdsData} from './birds.js';
+import {birdsDataEn} from './birdsEn.js';
 
 
 class SlideItem {
@@ -35,8 +37,16 @@ class SlideItem {
 
 }
 
-function makeGallery (array, index) {
-  let arr = array[index];
+
+
+function makeGallery (index) {
+  const lang = document.querySelector("input[type='radio']:checked").value;
+  let arrayBirds
+  if (lang == 'en') {
+    arrayBirds = [...birdsDataEn];
+  } else arrayBirds = [...birdsData];
+
+  let arr = arrayBirds[index];
   const slider = document.createElement('div');
   document.querySelector('.gallery-container').append(slider);
   slider.className = 'bird-type__gallery';

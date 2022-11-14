@@ -4,7 +4,8 @@ import { Player } from './player';
 function arrangeQuestions(src) {
   const guessBird = new Player(src);
   const player = guessBird.drawPlayer();
-  document.querySelector('.guess__name').append(player);
+  const game = document.querySelector('.guess__name')
+  game.append(player);
 }
 
 

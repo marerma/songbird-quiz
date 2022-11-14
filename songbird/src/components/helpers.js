@@ -1,6 +1,10 @@
+import {birdsData} from './birds';
+import {birdsDataEn} from './birdsEn.js';
+
 function fillOptionsList(optionsArr, sourceArr) {
   optionsArr.forEach((el, ind) => {
     el.textContent = sourceArr[ind].name;
+
   })
 }
 
@@ -39,4 +43,20 @@ function toggleFinishScore(propScore, propFinish) {
   document.querySelector('.game__next').style.display = propScore;
   document.querySelector('.game__finish').style.display = propFinish;
 }
-export {fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore}
+
+
+
+function checkLangArray() {
+  const lang = document.querySelector("input[type='radio']:checked").value;
+  let arrayBirds
+  if (lang == 'en') {
+    arrayBirds = [...birdsDataEn];
+  } 
+  else {
+    arrayBirds = [...birdsData]};
+    
+  return arrayBirds
+}
+
+
+export {fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore, checkLangArray}

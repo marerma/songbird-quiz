@@ -29,7 +29,7 @@ const optimization = () => {
 }
 
 const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
-const pages = ['index', 'quizz'];
+const pages = ['index', 'quiz'];
 
 const cssLoaders = extra => {
   const loaders = [

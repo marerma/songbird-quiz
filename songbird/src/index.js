@@ -1,7 +1,6 @@
 import './styles/sass/normalize.css'
 import './styles/sass/main.sass'
 import {showBird, showTitle} from './components/animation';
-import {birdsData} from './components/birds.js';
 import {makeGallery, openGallery, slide, closeSlider} from './components/slider-birds';
 import {controlSliderPlayer} from './components/playerControls';
 import {showBurger} from './components/burger';
@@ -13,6 +12,9 @@ showTitle()
 showBurger();
 changeLang();
 
+
+
+
 window.addEventListener('resize', showBurger);
 
 let galleryIsOpen = false;
@@ -20,7 +22,7 @@ let galleryIsOpen = false;
 const birdsGallery = [...document.querySelectorAll('.viewbutton')];
 
 birdsGallery.forEach((item, index) => item.addEventListener('click', () => {
-  makeGallery(birdsData, index);
+  makeGallery(index);
   openGallery();
   galleryIsOpen = true
   if (galleryIsOpen) {

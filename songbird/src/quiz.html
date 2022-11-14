@@ -13,14 +13,18 @@
       <a class="header__logo" href="./index.html"></a>
       <ul class="header__nav-list">
         <li class="header__item"><a href="./index.html" class="header__link">Home</a></li>
-        <li class="header__item"><a href="./index.html" class="header__link">New Quizz</a></li>
+        <li class="header__item"><a href="./index.html" class="header__link">New Quiz</a></li>
         <li class="header__item"><a href="./index.html#facts" class="header__link">Facts</a></li>
-        <li class="header__item"><a href="./index.html#rules" class="header__link">Quizz rules</a></li>
+        <li class="header__item"><a href="./index.html#rules" class="header__link">Quiz rules</a></li>
         <li class="header__item"><a href="./index.html#gallery" class="header__link">Gallery</a></li>
         <li class="header__item" id="lang">
           <ul class="lang__list">
-            <li class="lang__item"><p class="header__link-lang" data-lang="en">Eng</p></li>
-            <li class="lang__item"><p class="header__link-lang" data-lang="ru">Рус</p></li>
+            <li>
+              <input type="radio" name="language" class="lang__item" value="en" checked><label class="header__link-lang" data-lang="en">Eng</label></input>
+            </li>
+            <li>
+              <input type="radio" name="language" class="lang__item" value="ru"><label class="header__link-lang" data-lang="ru">Рус</label></input>
+            </li>
           </ul>
         </li>
       </ul>
@@ -45,7 +49,6 @@
              alt="bird" 
              class="guess__img">
       </div>
-
       <div class="guess__name">
         <h3 class="answer__name">******</h3>
       </div>
@@ -92,7 +95,7 @@
   </div>
   <div class="game__finish">
     <p class='game__finish-text'>
-      <span class="finish-declaration">You successfully finished the quizz! <br>Your final score is</span> <span class="score"></span></p>
+      <span class="finish-declaration">You successfully finished the quiz! <br>Your final score is</span> <span class="score"></span></p>
       <div class="game__new-game">
         <button class="new-btn">New game</button>
       </div>

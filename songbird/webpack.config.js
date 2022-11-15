@@ -151,6 +151,7 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: 'assets/[hash][ext]',
   },
   resolve: {
     extensions: ['.js', '.json'],
@@ -206,7 +207,8 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: jsLoaders()
-      }
+      },
+   
     ]
   }
 }

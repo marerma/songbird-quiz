@@ -1,5 +1,5 @@
-import './styles/sass/normalize.css'
-import './styles/sass/main.sass'
+import './styles/sass/normalize.css';
+import './styles/sass/main.sass';
 import {showBird, showTitle} from './components/animation';
 import {makeGallery, openGallery, slide, closeSlider} from './components/slider-birds';
 import {controlSliderPlayer} from './components/playerControls';

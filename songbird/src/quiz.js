@@ -8,7 +8,8 @@ import wrong from './assets/audio/wrong.mp3';
 import { fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore, checkLangArray} from './components/helpers'
 import {showBurger} from './components/burger';
 import { redrawPage, setLocalStorage } from './components/lang';
-
+import { selfCheck } from './components/selfcheck';
+ 
 
 
 arrangeQuestions();
@@ -21,6 +22,8 @@ window.addEventListener('load', ()=> {
   newGameState.redrawOptions();
 } 
 );
+selfCheck();
+
 window.addEventListener('resize', showBurger);
 
 

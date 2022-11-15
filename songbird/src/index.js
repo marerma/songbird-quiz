@@ -13,8 +13,6 @@ showBurger();
 changeLang();
 
 
-
-
 window.addEventListener('resize', showBurger);
 window.addEventListener('load', setLocalStorage);
 

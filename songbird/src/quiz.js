@@ -29,6 +29,7 @@ window.addEventListener('resize', showBurger);
 
 
 const secretAudio = document.querySelector('.item__audio');
+const playerIcon = document.querySelector('.player-icon');
 const optionsItem = [...document.querySelectorAll('.options__item')];
 const groupList = [...document.querySelectorAll('.questions__item')];
 const nextBtn = document.querySelector('.next-btn');
@@ -101,6 +102,7 @@ optionsItem.forEach((el, index) => {
 function checkAnswer(correct, target, index) {
   birdsArr = checkLangArray()
   const answerAudio = new Audio();
+  answerAudio.volume = 0.2;
   if (index == correct) {
     answerAudio.src = right;
     target.classList.add('correct');
@@ -111,6 +113,7 @@ function checkAnswer(correct, target, index) {
     newGameState.finalScore += getScore(newGameState.attemptCount);
     scoreHtml.forEach(el => {el.textContent =`${newGameState.finalScore}`});
     secretAudio.pause();
+    playerIcon.classList.remove('pause');
     nextBtn.classList.add('next-active');
     
     newGameState.groupNum == 5? 

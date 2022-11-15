@@ -20,6 +20,7 @@
 .game__questions
   padding: 1vw 0
 
+
 .game__score
   font-family: $mainFont
   color: white
@@ -31,8 +32,8 @@
 
 .score
   font-weight: 700
-  font-size: 1.3rem
-  padding-left: 0.5rem
+  font-size: 1.2em
+  padding-left: 0.5em
 
 .questions__list
   font-family: $mainFont
@@ -42,7 +43,7 @@
   display: grid
   grid-template-columns: repeat(6, 1fr)
   background-color: $colorWavy
-  border-radius: 5px
+  border-radius: 5px  
   text-align: center
   @media all and (max-width: 1091px)
     max-width: 90%
@@ -56,10 +57,9 @@
     padding: 0.3rem 0.5rem 
 
 
-
 .questions__item.active
  background-color: #555
- border-radius: 5px
+
 
 .answer__name
   font-family: $mainFont
@@ -69,8 +69,6 @@
   max-width: 50%
   margin-bottom: 1.5rem
 
-
-
 .game__options
   display: flex
   flex-direction: row
@@ -78,14 +76,12 @@
   gap: 10px
   @media all and (max-width: 650px)
     flex-direction: column
-  
 
 .game__options-list
   font-family: $mainFont
   display: flex
   flex-direction: column
-  justify-content: center
- 
+  justify-content: flex-start
   background-color: #222
   border-radius: 10px
   flex-basis: 40%
@@ -94,9 +90,6 @@
   gap: 5px
   @media all and (max-width: 1091px)
     padding: 20px 1rem
-
-
-
 
 .options__item
   line-height: 1rem
@@ -152,9 +145,6 @@
   width: 100%
   height: 100%
   object-fit: cover
-  
-
-
 
 .guess__name
   width: 70%
@@ -162,6 +152,7 @@
   @media all and (max-width: 650px)
     margin: 0 auto
     width: 90%
+    padding: 1.5rem 0
 
 .preview__container
   display: flex
@@ -169,13 +160,10 @@
   justify-content: center
   justify-items: space-between
   gap: 20px
-  @media all and (max-width: 1090px)
+  @media all and (max-width: 1091px)
     flex-direction: column
     width: 100%
     margin: 0 auto
-
-
-
 
 .game__options-preview
   background-color: #222 
@@ -222,9 +210,6 @@
   font-size: 1em
   color: white
 
-
-
-
 .game__intro
   display: none
 
@@ -232,8 +217,9 @@
   width: 70%
   margin: 0 auto
   margin-bottom: 20px
-  @media all and (max-width: 822px)
+  @media all and (max-width: 1091px)
     width: 90%
+
 
 .next-btn, .new-btn
   font-family: $mainFont
@@ -251,11 +237,14 @@
 .game__finish-text
   box-sizing: border-box
   font-family: $titleFont
-  
   color: white
   font-size: 30px
   padding: 4rem
   text-align: center
+  line-height: 2.1rem
+  @media all and (max-width: 1091px)
+    font-size: 20px
+    padding: 1rem
 
 
 .game__finish
@@ -266,15 +255,17 @@
   padding: 4rem
   border-radius: 10px
   display: none
+  @media all and (max-width: 1091px)
+    max-width: 90%
+    padding: 2rem
 
 .visible
   display: block
 
 
 .game__new-game
-  width: 40%
+  width: 40vw
   margin: 0 auto
-  
 
 .new-btn
   background-color: $colorWavy

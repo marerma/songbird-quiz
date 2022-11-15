@@ -92,21 +92,27 @@ function slide () {
       
       let soundPlaying = [...document.querySelectorAll('.item__audio')][index-1];
       let playIcon = [...document.querySelectorAll('.player-icon')][index-1];
+      const diff = Math.abs(index - currentIndex);
 
-    if (index >= currentIndex) {
-      slider.classList.add('slider-animation-left');
+    if (index > currentIndex) {
+      slider.animate([
+        {transform: 'translate(0%)'},
+        {transform: `translate(${-100 * diff}%)`}
+      ], 1000);
     } else {
       soundPlaying = [...document.querySelectorAll('.item__audio')][index+1];
       playIcon = [...document.querySelectorAll('.player-icon')][index+1];
-      slider.classList.add('slider-animation-right');
+      slider.animate([
+        {transform: 'translate(0%)'},
+        {transform: `translate(${100 * diff}%)`}
+      ], 1000);
     };
     stopSong(soundPlaying, playIcon);
 
     setTimeout(()=>{
-      slider.style.left = -newPosition + 'px'
-      slider.classList.remove('slider-animation-left');
-      slider.classList.remove('slider-animation-right');
-    }, 1000)
+      slider.style.left = -newPosition + 'px';
+    }, 1000);
+
     currentIndex = index;
   })
 })

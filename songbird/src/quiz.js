@@ -5,7 +5,7 @@ import { getRandomBird, arrangeQuestions} from './components/quiz-layout';
 import { controlSliderPlayer } from './components/playerControls';
 import right from './assets/audio/right.mp3';
 import wrong from './assets/audio/wrong.mp3';
-import { fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore, checkLangArray} from './components/helpers'
+import { fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore, checkLangArray, getScoreNew} from './components/helpers'
 import {showBurger} from './components/burger';
 import { redrawPage, setLocalStorage } from './components/lang';
 import { selfCheck } from './components/selfcheck';
@@ -82,6 +82,7 @@ function round(newGameState) {
 }
 
 optionsItem.forEach((el, index) => {
+  
   el.addEventListener('click', ()=> {
     birdsArr = checkLangArray()
     if(newGameState.levelIsActive) {
@@ -90,12 +91,17 @@ optionsItem.forEach((el, index) => {
       newGameState.birdOpen = index;
     } else {
       makePreview(birdsArr[newGameState.groupNum][index]);
-      checkAnswer(newGameState.randomBird, el, index);
-      newGameState.attemptCount++;
+      
+      if (!el.classList.contains('correct') && !el.classList.contains('incorrect')) {
+        newGameState.attemptCount++;
+        checkAnswer(newGameState.randomBird, el, index);
+      } 
+      
       newGameState.previewIsOpen = true;
       newGameState.birdOpen = index;
     };
   });
+ 
 });
 
 
@@ -110,7 +116,7 @@ function checkAnswer(correct, target, index) {
     newGameState.levelIsActive = true;
     birdNameHtml.textContent = birdsArr[newGameState.groupNum][correct].name;
     birdImgHtml.src = birdsArr[newGameState.groupNum][correct].image;
-    newGameState.finalScore += getScore(newGameState.attemptCount);
+    newGameState.finalScore += getScoreNew(newGameState.attemptCount);
     scoreHtml.forEach(el => {el.textContent =`${newGameState.finalScore}`});
     secretAudio.pause();
     playerIcon.classList.remove('pause');

@@ -32,10 +32,15 @@ function changeFirstPreview() {
 
 }
 
-function getScore(attempt, maxScore = 5, maxAttempt = 6) {
-  return Math.floor(maxScore - attempt*(attempt/maxAttempt));
-}
+// function getScore(attempt, maxScore = 5, maxAttempt = 6) {
+//   return Math.floor(maxScore - attempt*(attempt/maxAttempt));
+// }
 
+function getScoreNew(attempt) {
+  let score = [5, 4, 3, 2, 1, 0];
+  console.log(attempt, score[attempt-1])
+  return score[attempt-1];
+}
 
 function toggleFinishScore(propScore, propFinish) {
   document.querySelector('.game__score').style.display = propScore;
@@ -59,4 +64,4 @@ function checkLangArray() {
 }
 
 
-export {fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore, checkLangArray}
+export {fillOptionsList, makePreview, changeFirstPreview, toggleFinishScore, checkLangArray, getScoreNew}

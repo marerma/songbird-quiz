@@ -38,7 +38,6 @@ function changeFirstPreview() {
 
 function getScoreNew(attempt) {
   let score = [5, 4, 3, 2, 1, 0];
-  console.log(attempt, score[attempt-1])
   return score[attempt-1];
 }
 

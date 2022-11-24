@@ -5,10 +5,10 @@ import { getRandomBird, arrangeQuestions} from './components/quiz-layout';
 import { controlSliderPlayer } from './components/playerControls';
 import right from './assets/audio/right.mp3';
 import wrong from './assets/audio/wrong.mp3';
-import { fillOptionsList, makePreview, changeFirstPreview, getScore, toggleFinishScore, checkLangArray, getScoreNew} from './components/helpers'
+import { fillOptionsList, makePreview, changeFirstPreview, toggleFinishScore, checkLangArray, getScoreNew} from './components/helpers'
 import {showBurger} from './components/burger';
 import { redrawPage, setLocalStorage } from './components/lang';
-import { selfCheck } from './components/selfcheck';
+
  
 
 
@@ -22,7 +22,7 @@ window.addEventListener('load', ()=> {
   newGameState.redrawOptions();
 } 
 );
-selfCheck();
+
 
 window.addEventListener('resize', showBurger);
 
@@ -84,26 +84,17 @@ function round(newGameState) {
 optionsItem.forEach((el, index) => {
   
   el.addEventListener('click', ()=> {
-    birdsArr = checkLangArray()
-    if(newGameState.levelIsActive) {
-      makePreview(birdsArr[newGameState.groupNum][index]);
-      newGameState.previewIsOpen = true;
-      newGameState.birdOpen = index;
-    } else {
-      makePreview(birdsArr[newGameState.groupNum][index]);
+    birdsArr = checkLangArray();
+    makePreview(birdsArr[newGameState.groupNum][index]);
+    newGameState.previewIsOpen = true;
+    newGameState.birdOpen = index;
       
-      if (!el.classList.contains('correct') && !el.classList.contains('incorrect')) {
+      if (!el.classList.contains('correct') && !el.classList.contains('incorrect') &&!newGameState.levelIsActive) {
         newGameState.attemptCount++;
         checkAnswer(newGameState.randomBird, el, index);
-      } 
-      
-      newGameState.previewIsOpen = true;
-      newGameState.birdOpen = index;
-    };
+      }
+    });
   });
- 
-});
-
 
 function checkAnswer(correct, target, index) {
   birdsArr = checkLangArray()
@@ -121,13 +112,7 @@ function checkAnswer(correct, target, index) {
     secretAudio.pause();
     playerIcon.classList.remove('pause');
     nextBtn.classList.add('next-active');
-    
-    newGameState.groupNum == 5? 
-      setTimeout(()=> {
-        toggleFinishScore('none', 'block') 
-      }, 3000)
-      : nextBtn.addEventListener('click', nextLevel);
- 
+    nextBtn.addEventListener('click', nextLevel); 
   } else {
     answerAudio.src = wrong;
     target.classList.add('incorrect');
@@ -137,6 +122,10 @@ function checkAnswer(correct, target, index) {
 
 
 function nextLevel() {
+  if(newGameState.groupNum + 1 === 6) {
+    toggleFinishScore('none', 'block');
+  }
+    
   groupList[newGameState.groupNum].classList.remove('active');
   changeFirstPreview();
   nextBtn.classList.remove('next-active');
@@ -153,7 +142,6 @@ const newBtn = document.querySelector('.game__new-game');
 newBtn.addEventListener('click', newGame);
 
 function newGame(){
-  groupList[newGameState.groupNum].classList.remove('active');
   newGameState.groupNum = 0;
   newGameState.randomBird = 0;
   newGameState.attemptCount = 0;

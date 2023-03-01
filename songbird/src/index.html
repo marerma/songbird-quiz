@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+  <title>Bird Song Quiz</title>
+</head>
+<body class="body">
+  <header class="header">
+    <div class="header__navigation" id="home">
+      <a class="header__logo" href="./index.html"></a>
+      <ul class="header__nav-list" >
+        <li class="header__item"><a href="#home" class="header__link">Home</a></li>
+        <li class="header__item"><a href="quiz.html" class="header__link">New Quiz</a></li>
+        <li class="header__item"><a href="#facts" class="header__link">Facts</a></li>
+        <li class="header__item"><a href="#rules" class="header__link">Quiz rules</a></li>
+        <li class="header__item"><a href="#gallery" class="header__link">Gallery</a></li>
+        <li class="header__item" id="lang">
+          <ul class="lang__list">
+            <li>
+              <input type="radio" 
+                     name="language"
+                     class="lang__item" 
+                     value="en">
+                <label class="header__link-lang" data-lang="en">Eng</label>
+              </input>
+            </li>
+            <li>
+              <input type="radio" name="language" class="lang__item" value="ru"><label class="header__link-lang" data-lang="ru">Рус</label></input>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="background-video">
+      <div class="background-video__text">
+        <h1 class="background-video__title">Welcome to a fancy Birdsong Quiz!</h1>
+      </div>
+      <video poster="./assets/video/poster-video.jpg" loop="loop" muted="" autoplay="" poster="video/plane.jpg" class="background-video__video">
+        <source src="./assets/video/birds-video.mp4" type="video/mp4">
+        <source src="./assets/video/birds-video.webm" type="video/webm">
+        <source src="./assets/video/birds-flying.ogv" type="video/ogg">
+      </video>
+    </div>
+  <div class="scroll-mouse">
+    <img src="./assets/icons/icon-mouse.png" alt="icon scroll" class="mouse-icon">
+  </div>
+</header>
+<main>
+  <section class="facts" id="facts">
+     <div class="facts__container">
+      <div class="facts__img">
+        <img src="./assets/img/kisspng-bird.png" alt="bird flying" class="facts__bird flying-bird">
+      </div>
+      <ul class="facts__list facts__list_animation">
+        <h2 class="section__title section__title_facts section__title_animation">5 Fascinating Facts About Birdsong</h2>
+        <li class="facts__item">The songs of many bird species are highly complex and can contain <strong>dozens of notes per second</strong>. </li>
+        <li class="facts__item">Songbirds of the same species may have <strong>different dialects</strong>depending on their geographical area.</li>
+        <li class="facts__item">Birds <strong>aren’t born knowing their population’s songs</strong>. Just like humans, they have to listen to adults singing to pick up on the “language."</li>
+        <li class="facts__item">In most cases, when you hear a bird singing, you’re probably hearing a </strong>male</strong>. </li>
+        <li class="facts__item">Several songbird species <strong>don’t sing only their own tunes</strong>, but appropriate the tunes of other species as well. </li>
+      </ul>
+    </div>
+  </section>
+  <section class="rules" id="rules">
+    <div class="rules__container">
+      <ul class="rules__list">
+      <h2 class="section__title section__title_rules">Quiz rules</h2>
+      <li class="rules__item">There are 6 questions with 6 options</li>
+      <li class="rules__item">Listen to a birdsong and guess the bird name</strong> </li>
+      <li class="rules__item">The maximum points for one right answer is 5 points</li>
+      <li class="rules__item">You have 6 attempts. Each failed attempt reduces the score by one point</li>
+    </ul>
+    <div class="button">
+      <a href="./quiz.html" class="button__link" id="new-quizz">start quiz</a>
+    </div>
+    </div>
+  </section>
+  <section class="gallery" id="gallery">
+    <div class="gallery-container">
+      <h2 class="section__title gallery_title">Get to know more about birds and their songs</h2>
+      <ul class="bird-types-container">
+        <li id="different" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+              <p class="bird-type__title">Birds around us</p>
+              <button class="viewbutton">view more</button>
+            </div>
+          </div>
+        </li>
+        <li id="sparrows" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+            <p class="bird-type__title">Sparrows</p>
+            <button class="viewbutton">view more</button>
+            </div>
+          </div>
+        </li>
+        <li id="forest-birds" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+              <p class="bird-type__title">Forest birds</p>
+              <button class="viewbutton">view more</button>
+            </div>
+          </div>
+        </li>
+        <li id="songbirds" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+              <p class="bird-type__title">Songbirds</p>
+              <button class="viewbutton">view more</button>
+            </div>
+          </div>
+        </li>
+        <li id="predatory" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+              <p class="bird-type__title">Predatory birds</p>
+              <button class="viewbutton">view more</button>
+            </div>
+          </div>      
+        </li>
+        <li id="seabirds" class="bird-type">
+          <div class="bird-type__bg">
+            <div class="bird-type__overlay">
+              <p class="bird-type__title">Seabird</p>
+              <button class="viewbutton">view more</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </section>
+</main>
+  <footer class="footer">
+    <div class="footer__navigation">
+      <ul class="footer__navigation-list">
+        <li class="footer__item">
+          <a href="https://github.com/marerma"
+             class="footer__link" 
+             target="_blank"> made by marerma © 2022</a></li>
+        <li class="footer__item">
+          <a href="https://rs.school/js/" 
+             class="footer__link"
+             target="_blank">
+          <img src="./assets/logo/rs_school_js_white.svg" 
+              alt="logo rs-school"
+              class="footer__logo"></a></li>
+      </ul>
+  </footer>
+</body>
+</html>

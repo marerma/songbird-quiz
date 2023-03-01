@@ -1,0 +1,33 @@
+.button
+  width: 15rem
+  border-radius: 25px
+  border: 2px solid #303030
+  margin: 0 auto
+  background-color: $colorWavy
+  transition: all 0.8s ease-in-out
+
+.button:hover
+  cursor: pointer
+  background-color: #2D766B
+  transition: all 0.8s ease-in-out
+
+.button__link
+  display: block
+  padding: 10px
+  text-align: center
+  font-weight: 600
+  font-size: 1.5rem
+  color: white
+
+.button__link:after
+  content: ""
+  background-color: #303030
+  display: block
+  height: 2px
+  width: 0%
+  transition: width 0.8s ease-in-out
+  margin: 0 auto
+
+.button__link:hover:after
+  margin: 0 auto
+  width: 70%

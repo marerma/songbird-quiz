@@ -1,0 +1,44 @@
+
+.footer
+  position: relative
+  z-index: 9999
+
+.footer__navigation
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  padding: 10px 40px
+  background-color: rgba(0,0,0, 1)
+  position: relative
+  z-index: 9999
+  @media all and (max-width: 764px)
+    padding: 10px
+
+
+.footer__navigation-list
+  width: 90%
+  margin: 0 auto
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  justify-items: center
+
+
+
+
+.footer__item
+  @include mainText
+  color: white
+  text-transform: uppercase
+
+
+.footer__logo
+  display: inline-block
+  width: 100px
+  height: auto
+  @media all and (max-width: 764px)
+    width: max(12vw, 60px)
+.footer__link:hover
+  color: $colorWavy
